@@ -71,7 +71,7 @@ export default function SpotlightBoard({ nodes, totalCount }: SpotlightBoardProp
           onChange={(event) => setSearchTerm(event.target.value)}
           placeholder={t("kudosSpotlight:search.placeholder")}
           aria-label={t("kudosSpotlight:search.placeholder")}
-          className="w-32 bg-transparent text-[11px] font-medium text-white placeholder-white/70 outline-none"
+          className="w-32 bg-transparent text-[11px] font-medium text-white outline-none"
         />
       </div>
 
@@ -85,7 +85,7 @@ export default function SpotlightBoard({ nodes, totalCount }: SpotlightBoardProp
 
       {/* Name cloud — draggable when zoomed in */}
       <div
-        className={`absolute inset-0 touch-none ${zoom > 1 ? "cursor-grab active:cursor-grabbing" : ""}`}
+        className={`absolute inset-0 touch-none ${zoom > 1 ? "cursor-grab" : ""}`}
         style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})` }}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}

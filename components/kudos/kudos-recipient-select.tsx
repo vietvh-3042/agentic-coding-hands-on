@@ -117,7 +117,7 @@ export default function KudosRecipientSelect({ value, onSelect, invalid }: Kudos
             setOpen(true);
           }}
           placeholder={t("kudos:recipient.placeholder")}
-          className="flex-1 bg-transparent text-base font-bold text-[#00101A] outline-none placeholder:font-bold placeholder:text-[#999999]"
+          className="flex-1 bg-transparent text-base font-bold text-[#00101A] outline-none"
         />
         <button
           type="button"

@@ -28,24 +28,23 @@ export default function ProfileBadgeCollection({ icons, isSelf }: ProfileBadgeCo
   const heading = t(isSelf ? "profile:badges.headingSelf" : "profile:badges.headingOther");
 
   return (
-    <section aria-label={heading} className="flex flex-col gap-4">
-      <h2 className="font-(family-name:--font-montserrat) text-lg font-bold text-[#FFEA9E]">{heading}</h2>
-      <div className="flex flex-wrap gap-4">
+    <section aria-label={heading} className="w-full overflow-x-auto">
+      <div className="mx-auto grid max-w-230 min-w-210 grid-cols-6 gap-4 px-1">
         {icons.map((icon) => (
-          <div
+          <figure
             key={icon.id}
             data-testid="badge-slot"
             data-locked={!icon.unlocked}
-            className="relative size-16 shrink-0 overflow-hidden rounded-full border border-[#998C5F]"
+            className="flex min-w-0 flex-col items-center gap-3 text-center"
           >
-            <Image
-              src={icon.imageUrl}
-              alt={icon.name}
-              fill
-              sizes="64px"
-              className={icon.unlocked ? "object-cover" : "object-cover opacity-40 grayscale"}
-            />
-          </div>
+            <div className={`relative size-25 shrink-0 overflow-hidden rounded-full border-[3px] border-white`}>
+              <Image src={icon.imageUrl} alt="" fill sizes="100px" className="object-cover" />
+            </div>
+
+            <figcaption className="max-w-31 font-(family-name:--font-montserrat) text-[18px] leading-6 font-bold tracking-[0.02em] text-white uppercase">
+              {icon.name}
+            </figcaption>
+          </figure>
         ))}
       </div>
     </section>

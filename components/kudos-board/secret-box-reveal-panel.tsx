@@ -16,7 +16,7 @@ interface SecretBoxRevealPanelProps {
  * unopened shell — no distinct "opened box" asset exists — with the drawn
  * badge centered on top.
  *
- * `secret_box_icons.image_url` points at `/profile/icons/icon-N.png`, which
+ * `secret_box_icons.image_url` points at `/profile/icons/icon-N.svg`, which
  * does not exist on disk yet (clarifications.md, 2026-09-06 run 2 — no
  * artwork was ever supplied). The <img> stays wired to the real column so
  * dropping the artwork files in later needs no code change; `onError`

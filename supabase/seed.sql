@@ -423,12 +423,12 @@ values
 -- ===========================================================================
 insert into public.secret_box_icons (id, name, image_url, sort_order, weight)
 values
-  ('10000000-0000-4000-8000-000000000001', 'Stay Gold', '/profile/icons/icon-1.png', 1, 30),
-  ('10000000-0000-4000-8000-000000000002', 'Flow to Horizon', '/profile/icons/icon-2.png', 2, 25),
-  ('10000000-0000-4000-8000-000000000003', 'Touch of Light', '/profile/icons/icon-3.png', 3, 20),
-  ('10000000-0000-4000-8000-000000000004', 'Beyond the Boundary', '/profile/icons/icon-4.png', 4, 10),
-  ('10000000-0000-4000-8000-000000000005', 'Revival', '/profile/icons/icon-5.png', 5, 10),
-  ('10000000-0000-4000-8000-000000000006', 'Root Further', '/profile/icons/icon-6.png', 6, 5);
+  ('10000000-0000-4000-8000-000000000001', 'Stay Gold', '/profile/icons/icon-1.svg', 1, 30),
+  ('10000000-0000-4000-8000-000000000002', 'Flow to Horizon', '/profile/icons/icon-2.svg', 2, 25),
+  ('10000000-0000-4000-8000-000000000003', 'Touch of Light', '/profile/icons/icon-3.svg', 3, 20),
+  ('10000000-0000-4000-8000-000000000004', 'Beyond the Boundary', '/profile/icons/icon-4.svg', 4, 10),
+  ('10000000-0000-4000-8000-000000000005', 'Revival', '/profile/icons/icon-5.svg', 5, 10),
+  ('10000000-0000-4000-8000-000000000006', 'Root Further', '/profile/icons/icon-6.svg', 6, 5);
 
 -- 3 unlocks for the demo user (design: "Bộ sưu tập icon của tôi" shows some
 -- slots unlocked, the rest gray) — Stay Gold / Flow to Horizon / Touch of

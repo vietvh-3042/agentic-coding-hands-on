@@ -49,7 +49,7 @@ export default function HighlightSection({ hashtags, kudos }: HighlightSectionPr
     // mm:2940:13451
     <section className="flex w-full flex-col gap-10">
       {/* mm:2940:13452 B.1_header */}
-      <div className="mx-auto w-full max-w-288 px-6 lg:px-0">
+      <div className="mx-auto w-full max-w-6xl px-6 lg:px-0">
         <div className="flex flex-col items-start gap-4">
           {/* mm:2940:13454 */}
           <p className="font-(family-name:--font-montserrat) text-2xl leading-8 font-bold text-white">
@@ -84,7 +84,7 @@ export default function HighlightSection({ hashtags, kudos }: HighlightSectionPr
       </div>
 
       {/* Remounts (and so resets its slide index) whenever either filter
-          changes — the section keyed on the filter pair rather than a
+          changes — the section keyed on the pair rather than a
           useEffect chasing it, per BR-002's "resets the carousel to slide 1". */}
       <HighlightCarousel
         key={`${activeHashtagId ?? "all"}-${department ?? "all"}`}

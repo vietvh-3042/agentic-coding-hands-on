@@ -114,7 +114,7 @@ export default function KudosContentEditor({
           value={value}
           onChange={(event) => onChange(event.target.value)}
           placeholder={t("kudos:editor.placeholder")}
-          className="h-50 w-full resize-none bg-white px-6 py-0 text-base font-bold text-[#00101A] outline-none placeholder:font-bold placeholder:text-[#999999]"
+          className="h-50 w-full resize-none bg-white px-6 py-0 text-base font-bold text-[#00101A] outline-none"
         />
       </div>
       {/* mms_D.1_Gợi ý + character counter (BR-001/FR-601: a UX signal only —

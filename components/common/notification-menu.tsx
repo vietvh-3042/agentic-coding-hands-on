@@ -42,7 +42,7 @@ export default function NotificationMenu() {
       >
         <IconBell className="size-6" aria-hidden="true" />
         {/* mm:I2167:9091;186:2101;186:2089 */}
-        <span aria-hidden="true" className="absolute top-[9px] right-[9px] size-2 rounded-full bg-[#D4271D]" />
+        <span aria-hidden="true" className="absolute top-2.25 right-2.25 size-2 rounded-full bg-[#D4271D]" />
       </button>
 
       {open && (

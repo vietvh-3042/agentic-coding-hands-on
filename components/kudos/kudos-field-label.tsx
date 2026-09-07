@@ -31,7 +31,7 @@ export function FieldLabel({
   return (
     <span
       className={`shrink-0 text-[22px] leading-7 font-bold whitespace-nowrap text-[#00101A] ${
-        fixed ? "w-[139px]" : "max-w-[139px]"
+        fixed ? "w-34.75" : "max-w-34.75"
       }`}
     >
       {children}

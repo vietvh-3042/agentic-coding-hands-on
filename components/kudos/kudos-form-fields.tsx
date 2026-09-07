@@ -148,7 +148,7 @@ export default function KudosFormFields({ hashtags, form, errors, editor, onChan
             // `color-scheme: dark` site-wide, which paints the native box dark
             // — wrong on this modal's cream surface (Figma: white fill, #999
             // border, 4px radius).
-            className="size-6 shrink-0 rounded border border-[#999999] accent-[#FFEA9E] [color-scheme:light]"
+            className="size-6 shrink-0 rounded border border-[#999999] accent-[#FFEA9E] scheme-light"
           />
           {t("kudos:anonymous")}
         </label>
@@ -160,7 +160,7 @@ export default function KudosFormFields({ hashtags, form, errors, editor, onChan
               value={form.anonymousName}
               onChange={(event) => onChange((prev) => ({ ...prev, anonymousName: event.target.value }))}
               placeholder={t("kudos:anonymousName.placeholder")}
-              className={`h-14 rounded-lg border bg-white px-6 text-base font-bold text-[#00101A] outline-none placeholder:font-bold placeholder:text-[#999999] ${
+              className={`h-14 rounded-lg border bg-white px-6 text-base font-bold text-[#00101A] outline-none ${
                 errors.anonymousName ? "border-[#CF1322]" : "border-[#998C5F]"
               }`}
             />

@@ -18,7 +18,7 @@ const montserrat = Montserrat({
  * (2167:9029) + "Bìa" (2167:9030, Frame 487 / Frame 486). Full-bleed
  * key-visual background with a top-fading navy scrim, holding the ROOT
  * FURTHER logo, event countdown + info, CTA buttons, and the theme
- * introduction copy. Content column is centered `max-w-[1224px]` inside the
+ * introduction copy. Content column is centered `max-w-306` inside the
  * full-bleed background (Figma's 1512px artboard = 144px side padding +
  * 1224px content).
  */
@@ -62,7 +62,7 @@ export default function HeroSection() {
             width={451}
             height={200}
             priority
-            className="h-auto w-56 sm:w-72 lg:w-[451px]"
+            className="h-auto w-56 sm:w-72 lg:w-112.75"
           />
           <HeroInfoBlock />
           <HeroCta />

@@ -43,7 +43,7 @@ export default function KudosTitleInput({ value, error, onChange }: KudosTitleIn
           onChange={(event) => onChange(event.target.value)}
           placeholder={t("kudos:kudoTitle.placeholder")}
           aria-label={t("kudos:kudoTitle.label")}
-          className={`h-14 flex-1 rounded-lg border bg-white px-6 text-base font-bold text-[#00101A] outline-none placeholder:font-bold placeholder:text-[#999999] ${
+          className={`h-14 flex-1 rounded-lg border bg-white px-6 text-base font-bold text-[#00101A] outline-none ${
             error ? "border-[#CF1322]" : "border-[#998C5F]"
           }`}
         />

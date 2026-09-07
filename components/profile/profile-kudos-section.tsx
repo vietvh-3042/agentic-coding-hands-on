@@ -127,7 +127,7 @@ export default function ProfileKudosSection({
 
   return (
     <section
-      className="mx-auto flex w-full max-w-288 flex-col items-start gap-6 px-6 lg:px-0"
+      className="mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6 lg:px-0"
       data-testid="profile-kudos-section"
     >
       <ProfileDirectionDropdown options={options} active={direction} onSelect={handleSelectDirection} />

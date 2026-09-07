@@ -29,7 +29,7 @@ export default function HeroBadge({ type, label }: HeroBadgeProps) {
 
   // mm:3106:17694 danh hiệu
   return (
-    <span className="relative inline-flex h-[19px] w-[109px] shrink-0 items-center justify-center overflow-hidden rounded-full border-[0.5px] border-[#FFEA9E]">
+    <span className="relative inline-flex h-4.75 w-27.25 shrink-0 items-center justify-center overflow-hidden rounded-full border-[0.5px] border-[#FFEA9E]">
       {image ? (
         <Image src={image} alt={label} fill className="object-cover" sizes="109px" />
       ) : (

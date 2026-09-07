@@ -137,7 +137,7 @@ export default function HeroInfoBlock() {
                 {unit.value.split("").map((digit, i) => (
                   <div
                     key={i}
-                    className="relative flex h-[82px] w-[51px] items-center justify-center overflow-hidden rounded-lg"
+                    className="relative flex h-20.5 w-12.75 items-center justify-center overflow-hidden rounded-lg"
                   >
                     {/* mm:2167:9040 Rectangle 1 */}
                     <div

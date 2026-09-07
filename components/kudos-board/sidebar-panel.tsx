@@ -20,7 +20,7 @@ export default function SidebarPanel({ overview }: SidebarPanelProps) {
   const { t } = useTranslation();
 
   return (
-    <aside className="flex w-[422px] shrink-0 flex-col items-start gap-6">
+    <aside className="flex w-105.5 shrink-0 flex-col items-start gap-6">
       <SidebarStats overview={overview} />
       <SidebarLeaderboard
         title={t("kudosFeed:leaderboard.risingTitle")}

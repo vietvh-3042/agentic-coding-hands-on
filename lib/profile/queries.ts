@@ -59,6 +59,7 @@ export async function getProfileHeader(id: string): Promise<ProfileHeader | null
   const totalReceived = numberOr((statsRow as { kudos_received?: unknown } | null)?.kudos_received, 0);
   const distinctSenders = await countDistinctSenders(supabase, id);
   const heroCode = profileRow.hero_code;
+
   const department = typeof heroCode === "string" && heroCode.trim().length > 0 ? heroCode : null;
 
   return {

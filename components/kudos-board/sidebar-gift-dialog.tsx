@@ -83,7 +83,7 @@ export default function SidebarGiftDialog({ unopenedCount, onClose }: SidebarGif
       <DialogPortal>
         <DialogOverlay className="bg-black/70" />
         {/* mm:1466:7676 — modal shell (bg #00101A, r=12.7px, gap 22px) */}
-        <DialogPrimitive.Popup className="fixed top-1/2 left-1/2 z-60 flex h-[823px] max-h-[calc(100%-3rem)] w-163 max-w-[calc(100%-3rem)] -translate-1/2 flex-col items-center gap-[22px] overflow-y-auto rounded-[13px] border border-[#998C5F] bg-[#00101A] px-[13px] py-6 font-(family-name:--font-montserrat) outline-none">
+        <DialogPrimitive.Popup className="fixed top-1/2 left-1/2 z-60 flex h-205.75 max-h-[calc(100%-3rem)] w-163 max-w-[calc(100%-3rem)] -translate-1/2 flex-col items-center gap-5.5 overflow-y-auto rounded-[13px] border border-[#998C5F] bg-[#00101A] px-3.25 py-6 font-(family-name:--font-montserrat) outline-none">
           {/* mm:1466:7677 Frame 551 — title + close */}
           <div className="relative flex w-full items-center justify-center">
             <DialogTitle className="text-center text-[26px] leading-8 font-bold text-[#FFEA9E]">
@@ -115,7 +115,7 @@ export default function SidebarGiftDialog({ unopenedCount, onClose }: SidebarGif
             disabled={!hasBoxes || isPending}
             aria-label={t("kudosFeed:giftDialog.boxAlt")}
             data-testid="secret-box-button"
-            className={`relative aspect-square w-full max-w-[557px] ${
+            className={`relative aspect-square w-full max-w-139.25 ${
               hasBoxes && !isPending ? "cursor-pointer" : "cursor-not-allowed"
             }`}
           >

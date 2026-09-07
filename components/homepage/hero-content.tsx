@@ -14,9 +14,9 @@ export default function HeroContent() {
 
   return (
     // mm:3204:10152
-    <div className="flex w-full max-w-288 flex-col items-center gap-8 rounded-lg px-4 py-16 font-(family-name:--font-montserrat) text-white sm:px-10 lg:py-30">
+    <div className="flex w-full max-w-6xl flex-col items-center gap-8 rounded-lg px-4 py-16 font-(family-name:--font-montserrat) text-white sm:px-10 lg:py-30">
       {/* mm:3204:10153 Group 434 — stacked ROOT / FURTHER wordmark */}
-      <div className="relative h-[102px] w-55 sm:h-[134px] sm:w-[290px]">
+      <div className="relative h-25.5 w-55 sm:h-33.5 sm:w-72.5">
         {/* mm:3204:10155 MM_MEDIA_Root Text */}
         <div className="absolute top-0 left-[17.6%] h-1/2 w-[65.2%]">
           <Image

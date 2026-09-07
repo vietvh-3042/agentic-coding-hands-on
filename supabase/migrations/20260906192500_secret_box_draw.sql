@@ -1,13 +1,13 @@
 -- Secret-box weighted draw (F006_SecretBoxReveal BR-001..BR-004).
 --
 -- secret_box_icons currently holds six placeholder rows ("Icon 1".."Icon 6",
--- pointing at a non-existent /profile/icons/ directory) inserted by
+-- pointing at the /profile/icons/ directory) inserted by
 -- supabase/seed.sql, which this phase does not own. This migration adds the
 -- `weight` column and renames/re-weights those SAME rows by `sort_order`
 -- (clarifications.md, 2026-09-06 run 2: "seed the six real names and
 -- weights ... Update the existing rows rather than duplicating them") —
--- artwork stays a separate, non-blocking gap (image_url is untouched; the
--- UI renders a name-text fallback).
+-- artwork stays a separate concern; seed.sql supplies the SVG image_url paths
+-- and the UI renders a name-text fallback when an image is unavailable.
 --
 -- KNOWN GAP (see this phase's report): under `supabase db reset`, migrations
 -- run BEFORE seed.sql, so on a from-scratch reset this UPDATE runs against

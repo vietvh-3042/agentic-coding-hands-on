@@ -58,7 +58,7 @@ export default function HeroSection({ initialError = false }: HeroSectionProps) 
   };
 
   return (
-    <main className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden px-6 py-26 sm:px-10 lg:px-36">
+    <main className="relative flex min-h-svh w-full items-center justify-center overflow-hidden px-6 py-26 sm:px-10 lg:px-36">
       {/* Full-bleed wave-art background — covers the full viewport (behind the
           fixed header/footer), matching the Figma "Cover" full-bleed frame. */}
       <Image
@@ -99,7 +99,7 @@ export default function HeroSection({ initialError = false }: HeroSectionProps) 
           width={451}
           height={200}
           priority
-          className="h-auto w-64 sm:w-80 lg:w-[451px]"
+          className="h-auto w-64 sm:w-80 lg:w-112.75"
         />
 
         <div className="flex w-full max-w-124 flex-col items-start gap-6">

@@ -61,7 +61,7 @@ export default function AddlinkBox({ open, onOpenChange, onInsert }: AddlinkBoxP
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="flex w-full max-w-188 flex-col gap-6 rounded-[24px] border border-[#998C5F] bg-[#FFF8E1] p-10 sm:max-w-188"
+        className="flex w-full max-w-188 flex-col gap-6 rounded-3xl border border-[#998C5F] bg-[#FFF8E1] p-10 sm:max-w-188"
       >
         <DialogTitle className="text-center text-[32px] leading-10 font-bold text-[#00101A]">
           {t("kudos:addlink.title")}
@@ -71,7 +71,7 @@ export default function AddlinkBox({ open, onOpenChange, onInsert }: AddlinkBoxP
           <div className="flex items-center gap-4">
             <label
               htmlFor="addlink-text"
-              className="max-w-[139px] shrink-0 text-[22px] leading-7 font-bold text-[#00101A]"
+              className="max-w-34.75 shrink-0 text-[22px] leading-7 font-bold text-[#00101A]"
             >
               {t("kudos:addlink.textLabel")}
             </label>
@@ -99,7 +99,7 @@ export default function AddlinkBox({ open, onOpenChange, onInsert }: AddlinkBoxP
           <div className="flex items-center gap-4">
             <label
               htmlFor="addlink-url"
-              className="max-w-[139px] shrink-0 text-[22px] leading-7 font-bold text-[#00101A]"
+              className="max-w-34.75 shrink-0 text-[22px] leading-7 font-bold text-[#00101A]"
             >
               {t("kudos:addlink.linkLabel")}
             </label>

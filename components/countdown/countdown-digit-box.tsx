@@ -10,7 +10,7 @@ export default function CountdownDigitBox({ char }: { char: string }) {
       {/* mm:I…;186:2616 Rectangle 1 — frosted box (own 0.5 opacity layer so the
           digit above stays fully lit). */}
       <div
-        className="absolute inset-0 rounded-[12px] border-[0.75px] border-[#FFEA9E] opacity-50 backdrop-blur-[24.96px]"
+        className="absolute inset-0 rounded-xl border-[0.75px] border-[#FFEA9E] opacity-50 backdrop-blur-[24.96px]"
         style={{
           background: "linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.10) 100%)",
         }}

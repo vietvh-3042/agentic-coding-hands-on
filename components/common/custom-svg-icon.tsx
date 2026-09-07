@@ -24,7 +24,7 @@ export default function CustomSvgIcon({ src, className = "" }: CustomSvgIconProp
   // layout and `[&_svg]:h-full/w-full` makes the injected SVG fill the sized
   // outer span — so `h-/w-` on `className` controls the rendered icon size.
   return (
-    <span className={`inline-block shrink-0 [&_svg]:block [&_svg]:size-full [&>span]:contents ${className}`}>
+    <span className={`inline-block shrink-0 [&_svg]:size-full ${className}`}>
       <ReactSVG src={src} wrapper="span" />
     </span>
   );

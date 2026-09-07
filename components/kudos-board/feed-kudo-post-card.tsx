@@ -49,7 +49,7 @@ export default function KudoPostCard({ kudo, hashtags, onHashtagClick, onCopyLin
       {/* mm:256:4857 Info user */}
       <div className="flex w-full items-start justify-between gap-6">
         <FeedPostPersonBlock person={kudo.sender} />
-        <div className="flex h-[123px] w-8 items-start py-4">
+        <div className="flex h-30.75 w-8 items-start py-4">
           <CustomSvgIcon src="/kudos/icons/send.svg" className="size-8 text-[#00101A]" />
         </div>
         <FeedPostPersonBlock person={kudo.receiver} starTier={kudo.starTier} />

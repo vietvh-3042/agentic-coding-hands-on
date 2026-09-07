@@ -18,7 +18,7 @@ interface FeedPostPersonBlockProps {
 // Extracted from feed-kudo-post-card.tsx to keep that file under 200 lines.
 export default function FeedPostPersonBlock({ person, starTier }: FeedPostPersonBlockProps) {
   return (
-    <div className="flex w-[235px] flex-col items-center justify-center gap-3 text-center">
+    <div className="flex w-58.75 flex-col items-center justify-center gap-3 text-center">
       <span className="relative block size-16 shrink-0 cursor-default overflow-hidden rounded-full border-[1.869px] border-white">
         <Image src={person.avatar_url ?? DEFAULT_AVATAR} alt="" fill className="object-cover" sizes="64px" />
       </span>

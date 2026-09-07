@@ -22,7 +22,7 @@ export default function KeyvisualBanner() {
       <div
         role="img"
         aria-label="Keyvisual Sun* Annual Award 2025"
-        className="aspect-[1440/547] w-full"
+        className="aspect-1440/547 w-full"
         style={{
           background: "url(/homepage-saa/Keyvisual_BG.png) -0.163px -858.967px / 101.245% 367.889% no-repeat",
         }}
@@ -49,7 +49,7 @@ export default function KeyvisualBanner() {
           width={338}
           height={150}
           priority
-          className="h-auto w-[169px] sm:w-55 lg:w-[338px]"
+          className="h-auto w-42.25 sm:w-55 lg:w-84.5"
         />
 
         {/* mm:313:8453 mms_A_Title hệ thống giải thưởng */}

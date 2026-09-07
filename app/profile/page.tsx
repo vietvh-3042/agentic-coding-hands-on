@@ -79,21 +79,21 @@ export default async function ProfilePage({ searchParams }: ProfilePageProps) {
           starTier={header.starTier}
         />
 
-        <div className="mx-auto w-full max-w-288 px-6 lg:px-0">
+        <div className="mx-auto w-full max-w-6xl px-6 lg:px-0">
           <ProfileBadgeCollection icons={icons} isSelf={isSelf} />
         </div>
 
         {/* Phase 04 slot: stats card | write-Kudo bar — one ternary on
             `getProfileStats`'s null-off-self result decides the face; no
             second `isSelf` check here (see ProfileStatsCard's doc comment). */}
-        <div className="mx-auto w-full max-w-288 px-6 lg:px-0">
+        <div className="mx-auto w-full max-w-6xl px-6 lg:px-0">
           {stats ? (
             <ProfileStatsCard stats={stats} />
           ) : (
             <ProfileWriteBar recipient={{ id: header.id, displayName: header.displayName }} />
           )}
         </div>
-        <div className="mx-auto w-full max-w-288 px-6 lg:px-0">
+        <div className="mx-auto w-full max-w-6xl px-6 lg:px-0">
           <ProfileKudosSection
             targetId={header.id}
             receivedCount={header.totalReceived}

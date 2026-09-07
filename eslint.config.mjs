@@ -12,10 +12,19 @@ const compat = new FlatCompat({
   baseDirectory: dirname(fileURLToPath(import.meta.url)),
 });
 
+const airbnbConfig = compat.extends("airbnb-base").map((config) => {
+  if (!config.plugins?.import) return config;
+
+  const configWithoutPlugins = { ...config };
+  delete configWithoutPlugins.plugins;
+
+  return configWithoutPlugins;
+});
+
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  ...compat.extends("airbnb-base"),
+  ...airbnbConfig,
   tailwindcss.configs.recommended,
   {
     settings: {

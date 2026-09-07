@@ -28,11 +28,11 @@ export default function WriteKudosBarButton({ hashtags }: WriteKudosBarButtonPro
   return (
     <>
       {/* mm:2940:13449 */}
-      <div className="mx-auto flex w-full max-w-288 items-center gap-4 px-6 lg:px-0">
+      <div className="mx-auto flex w-full max-w-6xl items-center gap-4 px-6 lg:px-0">
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="flex w-full max-w-[738px] items-center gap-2 rounded-[68px] border border-[#998C5F] bg-[#FFEA9E]/10 px-4 py-6 text-left transition-colors hover:bg-[#FFEA9E]/20 sm:px-6"
+          className="flex w-full max-w-184.5 items-center gap-2 rounded-[68px] border border-[#998C5F] bg-[#FFEA9E]/10 px-4 py-6 text-left transition-colors hover:bg-[#FFEA9E]/20 sm:px-6"
         >
           {/* mm:I2940:13449;186:2758 Frame 483 */}
 
@@ -45,7 +45,7 @@ export default function WriteKudosBarButton({ hashtags }: WriteKudosBarButtonPro
             </span>
           </span>
         </button>
-        <div className="relative w-[381px]">
+        <div className="relative w-95.25">
           <CustomSvgIcon
             src="/icons/search.svg"
             className="pointer-events-none absolute top-1/2 left-4 size-8 -translate-y-1/2 text-white"
@@ -56,7 +56,7 @@ export default function WriteKudosBarButton({ hashtags }: WriteKudosBarButtonPro
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
             placeholder={t("kudosBoard:searchProfile.placeholder")}
-            className="h-20 w-full rounded-[68px] border border-[#998C5F] bg-[#FFEA9E]/10 pr-6 pl-14 font-(family-name:--font-montserrat) text-base text-white transition-colors outline-none placeholder:text-white/60 focus:border-[#FFEA9E] focus:bg-[#FFEA9E]/20"
+            className="h-20 w-full rounded-[68px] border border-[#998C5F] bg-[#FFEA9E]/10 pr-6 pl-14 font-(family-name:--font-montserrat) text-base text-white transition-colors outline-none"
           />
         </div>
       </div>

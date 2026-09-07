@@ -49,7 +49,7 @@ export default function SiteFooter() {
         {/* mm:I5001:14800;342:1407 */}
         <div className="flex items-center gap-20">
           {/* mm:I5001:14800;342:1408 */}
-          <Link href="/about" aria-label="Sun* Annual Awards 2025 home" className="h-16 w-[69px]">
+          <Link href="/about" aria-label="Sun* Annual Awards 2025 home" className="h-16 w-17.25">
             {/* mm:I5001:14800;342:1408;178:1030 */}
             <Image src="/homepage-saa/Footer_Logo.png" alt="Sun* Annual Awards 2025" width={69} height={64} />
           </Link>

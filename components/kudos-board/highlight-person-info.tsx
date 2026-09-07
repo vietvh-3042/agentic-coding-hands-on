@@ -18,7 +18,7 @@ interface HighlightPersonInfoProps {
  */
 export default function HighlightPersonInfo({ person, starTier }: HighlightPersonInfoProps) {
   return (
-    <div className="flex w-[235px] shrink-0 flex-col items-center gap-[13px]">
+    <div className="flex w-58.75 shrink-0 flex-col items-center gap-3.25">
       {/* mm:I2940:13465;335:9443;256:4734 MM_MEDIA_Avatar */}
       <span
         role="img"
@@ -28,7 +28,7 @@ export default function HighlightPersonInfo({ person, starTier }: HighlightPerso
       />
       <div className="flex flex-col items-center gap-0.5">
         {/* mm:I2940:13465;335:9443;256:4735 */}
-        <span className="w-[235px] cursor-default text-center font-(family-name:--font-montserrat) text-base leading-6 font-bold tracking-[0.15px] text-[#00101A]">
+        <span className="w-58.75 cursor-default text-center font-(family-name:--font-montserrat) text-base leading-6 font-bold tracking-[0.15px] text-[#00101A]">
           {person.display_name}
         </span>
         {/* mm:I2940:13465;335:9443;256:4741 Huy hiệu + Sao */}

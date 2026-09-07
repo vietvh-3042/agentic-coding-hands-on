@@ -42,7 +42,7 @@ export default function HighlightCarousel({ kudos, hashtags, onHashtagClick, onC
     return (
       <p
         data-testid="highlight-empty"
-        className="mx-auto w-full max-w-288 px-6 py-16 text-center text-lg font-bold text-[#999999] lg:px-0"
+        className="mx-auto w-full max-w-6xl px-6 py-16 text-center text-lg font-bold text-[#999999] lg:px-0"
       >
         {t("kudosBoard:highlight.empty")}
       </p>

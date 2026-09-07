@@ -18,7 +18,7 @@ export default function SunkudosSection() {
     // mm:3390:10349 — Figma "Bìa" frame spacing: 120px gap above, 96px below.
     <section className={`${montserrat.className} mx-auto w-full max-w-306`}>
       {/* mm:I3390:10349;313:8415 */}
-      <div className="relative aspect-[1120/500] w-full overflow-hidden rounded-2xl bg-[#00101A]">
+      <div className="relative aspect-1120/500 w-full overflow-hidden rounded-2xl bg-[#00101A]">
         {/* mm:I3390:10349;313:8416 */}
         <Image
           src="/homepage-saa/Kudos_Background.png"
@@ -62,7 +62,7 @@ export default function SunkudosSection() {
         {/* mm:I3390:10349;313:8417 (empty decorative frame, no visible content in design) */}
 
         {/* mm:I3390:10349;329:2948 */}
-        <div className="absolute aspect-[364/72]" style={{ left: "60%", top: "43%", width: "32.5%" }}>
+        <div className="absolute aspect-364/72" style={{ left: "60%", top: "43%", width: "32.5%" }}>
           <Image src="/icons/logo_kudos.svg" alt="Sun* Kudos" fill sizes="364px" className="object-contain" />
         </div>
       </div>

@@ -12,8 +12,8 @@ function CountdownUnit({ value, label }: { value: number; label: string }) {
   const [tens, ones] = String(value).padStart(2, "0").split("");
   return (
     // mm:2268:35139 unit — boxes row + left-aligned label
-    <div className="flex flex-col items-start gap-[21px]">
-      <div className="flex flex-row gap-[21px]">
+    <div className="flex flex-col items-start gap-5.25">
+      <div className="flex flex-row gap-5.25">
         <CountdownDigitBox char={tens} />
         <CountdownDigitBox char={ones} />
       </div>
