@@ -1,0 +1,7 @@
+{
+  "mode": "single",
+  "intents": [
+    "A Sun* member signs in to SAA 2025 with their Google account and receives an authenticated session that gates the rest of the app"
+  ],
+  "justification": ""
+}

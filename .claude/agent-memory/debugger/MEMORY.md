@@ -1,0 +1,3 @@
+- [Sun* Kudos feed DOM duplication root cause](sun-kudos-feed-dom-duplication.md) — data-kudo-id on both card root AND nested HeartButton, not a fetch/observer bug
+- [Sun* Kudos intermittent first-load flake](sun-kudos-intermittent-first-load-flake.md) — TC 9dfda316 occasional cold-start 500, separate root cause, unresolved
+- [Sun* Kudos missing avatar assets](sun-kudos-missing-avatar-assets.md) — public/profile/ never added, cosmetic broken image only

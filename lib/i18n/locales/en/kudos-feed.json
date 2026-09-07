@@ -1,0 +1,42 @@
+{
+  "section": {
+    "subtitle": "Sun* Annual Awards 2025",
+    "title": "ALL KUDOS"
+  },
+  "post": {
+    "copyLink": "Copy Link",
+    "likeAria": "Like this kudos",
+    "attachmentAlt": "Kudos attachment image",
+    "moreHashtags": "..."
+  },
+  "feed": {
+    "empty": "There are no Kudos yet."
+  },
+  "lightbox": {
+    "close": "Close"
+  },
+  "stats": {
+    "kudosReceived": "Kudos you received",
+    "kudosSent": "Kudos you sent",
+    "heartsReceived": "Hearts you received",
+    "secretBoxOpened": "Secret Boxes opened",
+    "secretBoxUnopened": "Secret Boxes unopened",
+    "openSecretBox": "Open Secret Box"
+  },
+  "giftDialog": {
+    "title": "EXPLORE YOUR SECRET BOX",
+    "subtitle": "Click the box to open",
+    "footerLabel": "Unopened secret boxes",
+    "boxAlt": "Unopened Secret Box gift",
+    "closeAria": "Close",
+    "successTitle": "SECRET BOX OPENED SUCCESSFULLY",
+    "continueSubtitle": "Click the box to open another",
+    "badgeAlt": "{{name}} badge",
+    "error": "You have no Secret Boxes left to open."
+  },
+  "leaderboard": {
+    "risingTitle": "TOP 10 RISING SUNNERS",
+    "giftTitle": "TOP 10 SUNNERS\nWHO RECEIVED GIFTS",
+    "empty": "No data yet"
+  }
+}

@@ -1,0 +1,356 @@
+{
+  "generated_at": "2026-09-07T04:51:40Z",
+  "overall_status": "WARN",
+  "plan": "artifacts",
+  "schema_version": 1,
+  "totals": {
+    "critical": 0,
+    "failed_specs": 0,
+    "passed_specs": 13,
+    "warning": 19
+  },
+  "validators": {
+    "feature_api_link": {
+      "issues": [],
+      "status": "PASS",
+      "summary": {
+        "critical": 0,
+        "warning": 0
+      }
+    },
+    "feature_screen_link": {
+      "issues": [
+        {
+          "location": {
+            "file": "/home/Workspaces/agentic-coding-hands-on/plans/260906-2312-rebuild-spec-core/artifacts/features/F011_ProfileSelfService/functional-spec.md"
+          },
+          "message": "functional-spec.md \u00a7 5 Screens has no SCR### column (pre-migration); run migrate-feature-screen-ids.py",
+          "rule_id": "link.pre_migration",
+          "severity": "warning",
+          "validator": "feature_screen_link"
+        },
+        {
+          "location": {
+            "file": "/home/Workspaces/agentic-coding-hands-on/plans/260906-2312-rebuild-spec-core/artifacts/features/F012_InAppNotifications/functional-spec.md"
+          },
+          "message": "functional-spec.md \u00a7 5 Screens has no SCR### column (pre-migration); run migrate-feature-screen-ids.py",
+          "rule_id": "link.pre_migration",
+          "severity": "warning",
+          "validator": "feature_screen_link"
+        },
+        {
+          "location": {
+            "file": "/home/Workspaces/agentic-coding-hands-on/plans/260906-2312-rebuild-spec-core/artifacts/features/F013_AdminRoleGate/functional-spec.md"
+          },
+          "message": "functional-spec.md \u00a7 5 Screens has no SCR### column (pre-migration); run migrate-feature-screen-ids.py",
+          "rule_id": "link.pre_migration",
+          "severity": "warning",
+          "validator": "feature_screen_link"
+        }
+      ],
+      "status": "WARN",
+      "summary": {
+        "critical": 0,
+        "warning": 3
+      }
+    },
+    "reading_guide_db_impact": {
+      "issues": [],
+      "status": "PASS",
+      "summary": {
+        "critical": 0,
+        "warning": 0
+      }
+    },
+    "specs": {
+      "F001_GoogleSignIn": {
+        "issues": [
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F001_GoogleSignIn/functional-spec.md",
+              "line": null
+            },
+            "message": "\u00a7 4 + \u00a7 5 average 2.2 lines/rule (budget: \u22642)",
+            "rule_id": "func.rule_density",
+            "severity": "warning",
+            "validator": "feature_spec"
+          }
+        ],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F001_GoogleSignIn/technical-spec.md",
+        "status": "WARN",
+        "summary": {
+          "critical": 0,
+          "warning": 1
+        }
+      },
+      "F002_KudosBoardData": {
+        "issues": [
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F002_KudosBoardData/technical-spec.md",
+              "line": 353
+            },
+            "message": "## 4. Decision Logic is N/A but spec contains conditional patterns matching DEC signatures (['\\\\{[^}]*\\\\?[^:]*:[^}]*\\\\}']); reviewer should verify",
+            "rule_id": "FeatureSpec.dec_lazy_na",
+            "severity": "warning",
+            "validator": "feature_spec"
+          },
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F002_KudosBoardData/functional-spec.md",
+              "line": null
+            },
+            "message": "\u00a7 4 + \u00a7 5 average 2.5 lines/rule (budget: \u22642)",
+            "rule_id": "func.rule_density",
+            "severity": "warning",
+            "validator": "feature_spec"
+          },
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F002_KudosBoardData/functional-spec.md",
+              "line": 46
+            },
+            "message": "CAP-02 'Browse the Highlight carousel & copy a kudo's link' claims 3 US / 3 FR / 1 SCR \u2014 exceeds the median feature's 2 US. Promotion to its own F### is a human decision today; no automated path exists. See references/code-formats.md \u00a7 Capability-Level Intent.",
+            "rule_id": "cap.promote_candidate",
+            "severity": "warning",
+            "validator": "feature_spec"
+          }
+        ],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F002_KudosBoardData/technical-spec.md",
+        "status": "WARN",
+        "summary": {
+          "critical": 0,
+          "warning": 3
+        }
+      },
+      "F003_KudoAuthoring": {
+        "issues": [
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F003_KudoAuthoring/technical-spec.md",
+              "line": 331
+            },
+            "message": "### Sequential image upload with rollback (ALG-001) matches file-exchange vocabulary but has no populated '**File Schema**' table",
+            "rule_id": "FeatureSpec.alg_file_schema_missing",
+            "severity": "warning",
+            "validator": "feature_spec"
+          }
+        ],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F003_KudoAuthoring/technical-spec.md",
+        "status": "WARN",
+        "summary": {
+          "critical": 0,
+          "warning": 1
+        }
+      },
+      "F004_KudoHearts": {
+        "issues": [],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F004_KudoHearts/technical-spec.md",
+        "status": "PASS",
+        "summary": {
+          "critical": 0,
+          "warning": 0
+        }
+      },
+      "F005_HashtagTaxonomy": {
+        "issues": [
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F005_HashtagTaxonomy/technical-spec.md",
+              "line": 211
+            },
+            "message": "## 4. Decision Logic is N/A but spec contains conditional patterns matching DEC signatures (['\\\\{[^}]*\\\\?[^:]*:[^}]*\\\\}']); reviewer should verify",
+            "rule_id": "FeatureSpec.dec_lazy_na",
+            "severity": "warning",
+            "validator": "feature_spec"
+          },
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F005_HashtagTaxonomy/functional-spec.md",
+              "line": null
+            },
+            "message": "\u00a7 4 + \u00a7 5 average 2.7 lines/rule (budget: \u22642)",
+            "rule_id": "func.rule_density",
+            "severity": "warning",
+            "validator": "feature_spec"
+          }
+        ],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F005_HashtagTaxonomy/technical-spec.md",
+        "status": "WARN",
+        "summary": {
+          "critical": 0,
+          "warning": 2
+        }
+      },
+      "F006_SecretBoxReveal": {
+        "issues": [
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F006_SecretBoxReveal/functional-spec.md",
+              "line": null
+            },
+            "message": "\u00a7 4 + \u00a7 5 average 2.4 lines/rule (budget: \u22642)",
+            "rule_id": "func.rule_density",
+            "severity": "warning",
+            "validator": "feature_spec"
+          }
+        ],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F006_SecretBoxReveal/technical-spec.md",
+        "status": "WARN",
+        "summary": {
+          "critical": 0,
+          "warning": 1
+        }
+      },
+      "F007_HomepageOverview": {
+        "issues": [
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F007_HomepageOverview/technical-spec.md",
+              "line": 301
+            },
+            "message": "\u00a7 4.4 rule has no 'Used in:' action list and its enclosing heading carries no explicit cross-cutting label",
+            "rule_id": "FeatureSpec.crosscutting_unlabelled",
+            "severity": "warning",
+            "validator": "feature_spec"
+          }
+        ],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F007_HomepageOverview/technical-spec.md",
+        "status": "WARN",
+        "summary": {
+          "critical": 0,
+          "warning": 1
+        }
+      },
+      "F008_AwardInformationBrowsing": {
+        "issues": [
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F008_AwardInformationBrowsing/technical-spec.md",
+              "line": 164
+            },
+            "message": "\u00a7 4.4 rule has no 'Used in:' action list and its enclosing heading carries no explicit cross-cutting label",
+            "rule_id": "FeatureSpec.crosscutting_unlabelled",
+            "severity": "warning",
+            "validator": "feature_spec"
+          },
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F008_AwardInformationBrowsing/functional-spec.md",
+              "line": null
+            },
+            "message": "\u00a7 4 + \u00a7 5 average 2.6 lines/rule (budget: \u22642)",
+            "rule_id": "func.rule_density",
+            "severity": "warning",
+            "validator": "feature_spec"
+          }
+        ],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F008_AwardInformationBrowsing/technical-spec.md",
+        "status": "WARN",
+        "summary": {
+          "critical": 0,
+          "warning": 2
+        }
+      },
+      "F009_InterfaceLocalization": {
+        "issues": [
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F009_InterfaceLocalization/technical-spec.md",
+              "line": 214
+            },
+            "message": "\u00a7 4.4 rule has no 'Used in:' action list and its enclosing heading carries no explicit cross-cutting label",
+            "rule_id": "FeatureSpec.crosscutting_unlabelled",
+            "severity": "warning",
+            "validator": "feature_spec"
+          },
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F009_InterfaceLocalization/functional-spec.md",
+              "line": null
+            },
+            "message": "\u00a7 4 + \u00a7 5 average 2.1 lines/rule (budget: \u22642)",
+            "rule_id": "func.rule_density",
+            "severity": "warning",
+            "validator": "feature_spec"
+          }
+        ],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F009_InterfaceLocalization/technical-spec.md",
+        "status": "WARN",
+        "summary": {
+          "critical": 0,
+          "warning": 2
+        }
+      },
+      "F010_PrelaunchCountdownGate": {
+        "issues": [],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F010_PrelaunchCountdownGate/technical-spec.md",
+        "status": "PASS",
+        "summary": {
+          "critical": 0,
+          "warning": 0
+        }
+      },
+      "F011_ProfileSelfService": {
+        "issues": [
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F011_ProfileSelfService/functional-spec.md",
+              "line": null
+            },
+            "message": "\u00a7 4 + \u00a7 5 average 3.5 lines/rule (budget: \u22642)",
+            "rule_id": "func.rule_density",
+            "severity": "warning",
+            "validator": "feature_spec"
+          }
+        ],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F011_ProfileSelfService/technical-spec.md",
+        "status": "WARN",
+        "summary": {
+          "critical": 0,
+          "warning": 1
+        }
+      },
+      "F012_InAppNotifications": {
+        "issues": [
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F012_InAppNotifications/functional-spec.md",
+              "line": null
+            },
+            "message": "\u00a7 4 + \u00a7 5 average 3.0 lines/rule (budget: \u22642)",
+            "rule_id": "func.rule_density",
+            "severity": "warning",
+            "validator": "feature_spec"
+          }
+        ],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F012_InAppNotifications/technical-spec.md",
+        "status": "WARN",
+        "summary": {
+          "critical": 0,
+          "warning": 1
+        }
+      },
+      "F013_AdminRoleGate": {
+        "issues": [
+          {
+            "location": {
+              "file": "plans/260906-2312-rebuild-spec-core/artifacts/features/F013_AdminRoleGate/functional-spec.md",
+              "line": null
+            },
+            "message": "\u00a7 4 + \u00a7 5 average 2.8 lines/rule (budget: \u22642)",
+            "rule_id": "func.rule_density",
+            "severity": "warning",
+            "validator": "feature_spec"
+          }
+        ],
+        "spec_path": "plans/260906-2312-rebuild-spec-core/artifacts/features/F013_AdminRoleGate/technical-spec.md",
+        "status": "WARN",
+        "summary": {
+          "critical": 0,
+          "warning": 1
+        }
+      }
+    }
+  }
+}

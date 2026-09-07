@@ -1,0 +1,37 @@
+{
+  "kvBanner": {
+    "title": "Recognition & thank-you system",
+    "logoAlt": "Sun* Annual Awards 2025 KUDOS"
+  },
+  "writeBar": {
+    "placeholder": "Who would you like to thank and recognize today?"
+  },
+  "searchProfile": {
+    "placeholder": "Search profile Sunner"
+  },
+  "highlight": {
+    "eyebrow": "Sun* Annual Awards 2025",
+    "title": "HIGHLIGHT KUDOS",
+    "empty": "There are no Kudos yet.",
+    "filters": {
+      "hashtag": "Hashtag",
+      "department": "Department",
+      "clear": "Clear",
+      "empty": "No options"
+    },
+    "card": {
+      "copyLink": "Copy Link",
+      "viewDetail": "View details",
+      "like": "Like"
+    },
+    "pagination": {
+      "prev": "Previous slide",
+      "next": "Next slide"
+    }
+  },
+  "starTier": {
+    "tier1": "This Sunner has received 10 Kudos and started spreading warmth to those around them.",
+    "tier2": "This Sunner has received 20 Kudos and proven their influence through positive actions every day.",
+    "tier3": "This Sunner has received 50 Kudos and become a role model for recognition, sharing, and the Sun* spirit."
+  }
+}

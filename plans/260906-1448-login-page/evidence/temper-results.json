@@ -1,0 +1,53 @@
+{
+  "commands": [
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "status": "pass",
+      "summary": "tsc --noEmit clean. Was exit 2 with ~30 TS2307 before the baseline repair added i18next/react-i18next.",
+      "ts": "2026-09-06T10:06:12Z"
+    },
+    {
+      "command": "pnpm exec eslint app/ components/login/ lib/supabase/ proxy.ts e2e/",
+      "exitCode": 0,
+      "status": "pass",
+      "summary": "0 errors, 14 tailwind class-order warnings. Zero module-resolution errors (was ~30).",
+      "ts": "2026-09-06T10:06:12Z"
+    },
+    {
+      "command": "pnpm exec prettier --check <18 files touched by this change>",
+      "exitCode": 0,
+      "status": "pass",
+      "summary": "All matched files use Prettier code style. CRLF in both login.json locales and a missing trailing newline in next.config.ts were fixed.",
+      "ts": "2026-09-06T10:06:12Z"
+    },
+    {
+      "command": "pnpm build",
+      "exitCode": 0,
+      "status": "pass",
+      "summary": "Next.js 16.3.1 Turbopack production build succeeded; output registers the Proxy (Middleware) entry and renders /login and /auth/callback dynamic.",
+      "ts": "2026-09-06T10:06:12Z"
+    },
+    {
+      "command": "pnpm exec playwright test --reporter=line",
+      "exitCode": 0,
+      "status": "pass",
+      "summary": "11 passed (7.4s) against a real pnpm build && pnpm start server. Gate spec went RED (4 assertion-caused failures) before proxy.ts existed, GREEN after.",
+      "ts": "2026-09-06T10:06:12Z"
+    },
+    {
+      "command": "curl -s -D - http://127.0.0.1:3000/auth/callback?code=x&next=https://evil.test",
+      "exitCode": 0,
+      "status": "pass",
+      "summary": "307 to /login?error=oauth_failed; host-relative Location; zero occurrences of evil.test in any response header. Open-redirect countermeasure verified live.",
+      "ts": "2026-09-06T10:06:12Z"
+    },
+    {
+      "command": "SC-002 / SC-004 / FR-401 manual verification",
+      "exitCode": 0,
+      "status": "skipped",
+      "summary": "NOT RUN. Requires real Google OAuth credentials in .env plus a Supabase stack restart, neither of which is available yet. Recorded as unproven in inspection-verdict.json rather than assumed.",
+      "ts": "2026-09-06T10:06:12Z"
+    }
+  ]
+}

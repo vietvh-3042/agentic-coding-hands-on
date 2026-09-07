@@ -1,0 +1,25 @@
+{
+  "header": {
+    "eyebrow": "Sun* Annual Awards 2025",
+    "title": "SPOTLIGHT BOARD"
+  },
+  "board": {
+    "kudosCount": "{{count}} KUDOS"
+  },
+  "search": {
+    "placeholder": "Search"
+  },
+  "panZoom": {
+    "tooltip": "Pan/Zoom",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "reset": "Reset"
+  },
+  "tooltip": {
+    "receivedAt": "Received Kudos at {{time}}"
+  },
+  "emptyState": {
+    "title": "No data yet",
+    "description": "No matching Sunner found"
+  }
+}

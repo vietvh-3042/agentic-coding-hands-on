@@ -1,0 +1,41 @@
+{
+  "task": "Implement the /login page for SAA 2025: real Google OAuth sign-in via a local Supabase project, a Next.js 16 proxy.ts session guard over the app's routes, and a localized failure state. MoMorph screen GzbNeVGJHz (fileKey 9ypp4enmFmdK3YAFJLIu6C).",
+  "mode": "interactive",
+  "acceptanceCriteria": [
+    "SC-001 an unauthenticated visitor to a protected route is redirected to /login",
+    "SC-003 the Google button is disabled and exposes aria-busy while authenticating",
+    "SC-005 a failed or cancelled sign-in renders a localized error in a role=alert region",
+    "SC-006 the button click issues an authorize request with provider=google and a query-string-free redirect_to",
+    "SC-007 the callback never reflects an inbound next or redirect_to into a redirect target",
+    "SC-002 an authenticated visitor to /login is redirected away to the post-login target",
+    "SC-004 a successful sign-in lands the user on /countdown before launch or /about after",
+    "FR-401 the selected language survives the whole sign-in redirect chain"
+  ],
+  "touchpoints": [
+    "proxy.ts",
+    "lib/supabase/client.ts",
+    "lib/supabase/server.ts",
+    "lib/supabase/proxy.ts",
+    "app/auth/callback/route.ts",
+    "app/login/page.tsx",
+    "components/login/hero-section.tsx",
+    "components/login/google-login-button.tsx",
+    "lib/i18n/locales/en/login.json",
+    "lib/i18n/locales/vi/login.json",
+    "supabase/config.toml",
+    "next.config.ts",
+    "package.json",
+    "eslint.config.mjs",
+    "playwright.config.ts",
+    "e2e/auth-guard.spec.ts",
+    "e2e/login-click-contract.spec.ts",
+    "e2e/login-error-state.spec.ts"
+  ],
+  "blastRadius": "Every route in the app becomes session-gated by proxy.ts, so a guard defect locks out all users. Session-cookie handling touches token rotation. The Supabase config change affects the shared local stack. Baseline repair (i18next, react-i18next, next-intl plugin removal) affects every component that calls useTranslation.",
+  "contracts": [
+    "Next.js 16 proxy.ts file convention (renamed from middleware.ts; no runtime key)",
+    "@supabase/ssr v0.12 getAll/setAll cookie adapter",
+    "Supabase GoTrue OAuth 3-hop redirect contract and additional_redirect_urls allow-list",
+    "i18n login namespace keys consumed by components"
+  ]
+}

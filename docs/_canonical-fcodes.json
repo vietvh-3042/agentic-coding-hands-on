@@ -1,0 +1,235 @@
+{
+  "generated_at": "2026-09-07T02:53:27Z",
+  "plan": "260906-2312-rebuild-spec-core",
+  "features": [
+    {
+      "fcode": "F001",
+      "name": "Google Sign-In",
+      "slug": "F001_GoogleSignIn",
+      "priority": "P1",
+      "type": "mixed",
+      "related": {
+        "screens": [
+          "SCR001_RootRedirect",
+          "SCR002_LoginScreen",
+          "SCR004_AboutHomepage",
+          "SCR005_AwardInfoScreen",
+          "SCR006_SunKudosBoard"
+        ],
+        "user_stories": ["US001_SignInWithGoogle", "US002_CompleteGoogleSignIn", "US004_SignOut"],
+        "routes": ["ROUTE001"],
+        "models": ["MODEL001_PROFILES"],
+        "bl": ["BL001_CreateProfileOnSignup"],
+        "perms": ["PERM001_GlobalSessionGate"]
+      }
+    },
+    {
+      "fcode": "F002",
+      "name": "Kudos Board Data",
+      "slug": "F002_KudosBoardData",
+      "priority": "P0",
+      "type": "ui",
+      "related": {
+        "screens": [
+          "SCR006_SunKudosBoard",
+          "SCR006_SunKudosBoard/REG002",
+          "SCR006_SunKudosBoard/REG003",
+          "SCR004_AboutHomepage",
+          "SCR005_AwardInfoScreen"
+        ],
+        "user_stories": [
+          "US007_ViewSunKudosBoard",
+          "US014_FilterHighlightKudosByDepartment",
+          "US015_BrowseHighlightCarousel",
+          "US016_CopyKudoShareLink",
+          "US018_SearchSpotlightBoard",
+          "US019_ZoomSpotlightBoard",
+          "US020_PanSpotlightBoard",
+          "US023_ViewKudoAttachedImage",
+          "US024_LoadMoreKudosInFeed"
+        ],
+        "routes": ["ROUTE007"],
+        "models": ["MODEL001_PROFILES", "MODEL002_KUDOS"],
+        "bl": [],
+        "perms": [
+          "PERM002_SunKudosDefenseInDepthGate",
+          "PERM003_ProfilesReadAll",
+          "PERM013_ProfileKudoStatsViewReadAll"
+        ]
+      }
+    },
+    {
+      "fcode": "F003",
+      "name": "Kudo Authoring",
+      "slug": "F003_KudoAuthoring",
+      "priority": "P0",
+      "type": "ui",
+      "related": {
+        "screens": ["SCR004_AboutHomepage", "SCR006_SunKudosBoard"],
+        "user_stories": ["US010_OpenKudoComposer", "US011_PostAKudo", "US012_InsertLinkIntoKudoMessage"],
+        "routes": ["ROUTE002"],
+        "models": ["MODEL002_KUDOS", "MODEL004_HASHTAGS", "MODEL005_KUDO_HASHTAGS"],
+        "bl": [],
+        "perms": ["PERM005_KudosReadAllInsertOwn", "PERM007_HashtagsReadOnly", "PERM008_KudoHashtagsReadInsertBySender"]
+      }
+    },
+    {
+      "fcode": "F004",
+      "name": "Kudo Hearts",
+      "slug": "F004_KudoHearts",
+      "priority": "P1",
+      "type": "mixed",
+      "related": {
+        "screens": ["SCR006_SunKudosBoard/REG001", "SCR006_SunKudosBoard/REG003"],
+        "user_stories": ["US017_ReactToKudoWithHeart"],
+        "routes": ["ROUTE003", "ROUTE004"],
+        "models": ["MODEL002_KUDOS", "MODEL003_KUDO_HEARTS", "MODEL009_EVENT_SETTINGS"],
+        "bl": [
+          "BL002_SyncKudoHeartsCount",
+          "BL003_ResolveHeartValueSecurityDefiner",
+          "BL004_ResolveHeartValueNoDefiner"
+        ],
+        "perms": ["PERM006_KudoHeartsOwnershipCrud", "PERM012_EventSettingsReadOnly"]
+      }
+    },
+    {
+      "fcode": "F005",
+      "name": "Hashtag Taxonomy & Filtering",
+      "slug": "F005_HashtagTaxonomy",
+      "priority": "P1",
+      "type": "mixed",
+      "related": {
+        "screens": ["SCR006_SunKudosBoard/REG001", "SCR006_SunKudosBoard/REG003"],
+        "user_stories": ["US013_FilterKudosByHashtag"],
+        "routes": [],
+        "models": ["MODEL004_HASHTAGS", "MODEL005_KUDO_HASHTAGS"],
+        "bl": [],
+        "perms": ["PERM007_HashtagsReadOnly", "PERM008_KudoHashtagsReadInsertBySender"]
+      }
+    },
+    {
+      "fcode": "F006",
+      "name": "Secret Box Reveal",
+      "slug": "F006_SecretBoxReveal",
+      "priority": "P2",
+      "type": "mixed",
+      "related": {
+        "screens": ["SCR006_SunKudosBoard/REG004"],
+        "user_stories": ["US021_OpenSecretBoxDialog", "US022_DrawFromSecretBox"],
+        "routes": ["ROUTE005", "ROUTE006"],
+        "models": ["MODEL001_PROFILES", "MODEL006_SECRET_BOX_ICONS", "MODEL007_USER_ICON_UNLOCKS"],
+        "bl": [],
+        "perms": [
+          "PERM009_SecretBoxIconsReadOnly",
+          "PERM010_UserIconUnlocksReadOnly",
+          "PERM014_OpenSecretBoxRpcBoundary"
+        ]
+      }
+    },
+    {
+      "fcode": "F007",
+      "name": "Homepage Overview",
+      "slug": "F007_HomepageOverview",
+      "priority": "P1",
+      "type": "ui",
+      "related": {
+        "screens": ["SCR004_AboutHomepage"],
+        "user_stories": ["US005_ViewHomepage", "US009_ViewSaaRules"],
+        "routes": [],
+        "models": [],
+        "bl": [],
+        "perms": []
+      }
+    },
+    {
+      "fcode": "F008",
+      "name": "Award Information Browsing",
+      "slug": "F008_AwardInformationBrowsing",
+      "priority": "P1",
+      "type": "ui",
+      "related": {
+        "screens": ["SCR005_AwardInfoScreen"],
+        "user_stories": ["US006_ViewAwardInformation", "US008_BrowseAwardCategories"],
+        "routes": [],
+        "models": [],
+        "bl": [],
+        "perms": []
+      }
+    },
+    {
+      "fcode": "F009",
+      "name": "Interface Localization",
+      "slug": "F009_InterfaceLocalization",
+      "priority": "P2",
+      "type": "ui",
+      "related": {
+        "screens": ["SCR002_LoginScreen", "SCR004_AboutHomepage", "SCR005_AwardInfoScreen", "SCR006_SunKudosBoard"],
+        "user_stories": ["US003_SwitchInterfaceLanguage"],
+        "routes": [],
+        "models": [],
+        "bl": [],
+        "perms": []
+      }
+    },
+    {
+      "fcode": "F010",
+      "name": "Prelaunch Countdown Gate",
+      "slug": "F010_PrelaunchCountdownGate",
+      "priority": "P2",
+      "type": "ui",
+      "related": {
+        "screens": ["SCR003_CountdownScreen"],
+        "user_stories": [],
+        "routes": [],
+        "models": [],
+        "bl": [],
+        "perms": []
+      }
+    },
+    {
+      "fcode": "F011",
+      "name": "Profile Self-Service",
+      "slug": "F011_ProfileSelfService",
+      "priority": "P3",
+      "type": "background",
+      "related": {
+        "screens": [],
+        "user_stories": [],
+        "routes": [],
+        "models": ["MODEL001_PROFILES"],
+        "bl": [],
+        "perms": ["PERM004_ProfilesOwnerColumnUpdate"]
+      }
+    },
+    {
+      "fcode": "F012",
+      "name": "In-App Notifications",
+      "slug": "F012_InAppNotifications",
+      "priority": "P3",
+      "type": "background",
+      "related": {
+        "screens": [],
+        "user_stories": [],
+        "routes": [],
+        "models": ["MODEL008_NOTIFICATIONS"],
+        "bl": [],
+        "perms": ["PERM011_NotificationsOwnerOnly"]
+      }
+    },
+    {
+      "fcode": "F013",
+      "name": "Admin Role Gate",
+      "slug": "F013_AdminRoleGate",
+      "priority": "P3",
+      "type": "background",
+      "related": {
+        "screens": [],
+        "user_stories": [],
+        "routes": [],
+        "models": ["MODEL001_PROFILES"],
+        "bl": [],
+        "perms": ["PERM015_AdminRoleGate"]
+      }
+    }
+  ]
+}

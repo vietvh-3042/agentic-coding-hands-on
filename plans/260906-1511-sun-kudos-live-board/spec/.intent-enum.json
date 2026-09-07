@@ -1,0 +1,11 @@
+{
+  "mode": "system",
+  "intents": [
+    "A Sun* member browses the live kudos board and sees real kudos, highlights, spotlight names and leaderboards from the database",
+    "A Sun* member writes and submits a kudo to a colleague, with hashtags, images and links",
+    "A Sun* member hearts or un-hearts a colleague's kudo, crediting the sender under the event's multiplier rules",
+    "A Sun* member filters the board by hashtag from either dropdown or from a chip on any card",
+    "A Sun* member opens a secret box and receives a randomly drawn icon that persists to their profile"
+  ],
+  "justification": ""
+}

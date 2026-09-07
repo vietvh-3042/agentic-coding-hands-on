@@ -1,0 +1,25 @@
+{
+  "header": {
+    "eyebrow": "Sun* Annual Awards 2025",
+    "title": "SPOTLIGHT BOARD"
+  },
+  "board": {
+    "kudosCount": "{{count}} KUDOS"
+  },
+  "search": {
+    "placeholder": "Tìm kiếm"
+  },
+  "panZoom": {
+    "tooltip": "Pan/Zoom",
+    "zoomIn": "Phóng to",
+    "zoomOut": "Thu nhỏ",
+    "reset": "Đặt lại"
+  },
+  "tooltip": {
+    "receivedAt": "Nhận Kudos lúc {{time}}"
+  },
+  "emptyState": {
+    "title": "Chưa có dữ liệu",
+    "description": "Không tìm thấy Sunner phù hợp"
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "command": "pnpm exec playwright test --project=chromium-authed e2e/rules-drawer.spec.ts --reporter=line",
+    "exitCode": 0,
+    "summary": "Run 1: 9 passed, 2 failed (TC_GUI_003, TC_FUN_005 RED assertions fail as expected)"
+  },
+  {
+    "command": "pnpm exec playwright test --project=chromium-authed e2e/rules-drawer.spec.ts --reporter=line",
+    "exitCode": 0,
+    "summary": "Run 2: 9 passed, 2 failed (identical results, no flake)"
+  },
+  {
+    "command": "pnpm exec playwright test --project=chromium-authed e2e/rules-drawer.spec.ts --reporter=line",
+    "exitCode": 0,
+    "summary": "Run 3: 9 passed, 2 failed (stable across 3 runs)"
+  },
+  {
+    "command": "pnpm lint -- e2e/rules-drawer.spec.ts",
+    "exitCode": 1,
+    "summary": "Lint: 0 errors in test file (212 pre-existing warnings in project, not from new test)"
+  },
+  {
+    "command": "pnpm typecheck",
+    "exitCode": 0,
+    "summary": "TypeCheck: Clean, no errors"
+  }
+]

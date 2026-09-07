@@ -1,0 +1,12 @@
+{
+  "hero": {
+    "logoAlt": "ROOT FURTHER",
+    "subtitleLine1": "Bắt đầu hành trình của bạn cùng SAA 2025.",
+    "subtitleLine2": "Đăng nhập để khám phá!"
+  },
+  "googleButton": {
+    "signingIn": "Signing in…",
+    "label": "LOGIN With Google",
+    "error": "Đăng nhập không thành công. Vui lòng thử lại."
+  }
+}

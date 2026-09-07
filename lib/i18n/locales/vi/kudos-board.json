@@ -1,0 +1,37 @@
+{
+  "kvBanner": {
+    "title": "Hệ thống ghi nhận và cảm ơn",
+    "logoAlt": "Sun* Annual Awards 2025 KUDOS"
+  },
+  "writeBar": {
+    "placeholder": "Hôm nay, bạn muốn gửi lời cảm ơn và ghi nhận đến ai?"
+  },
+  "searchProfile": {
+    "placeholder": "Tìm kiếm profile Sunner"
+  },
+  "highlight": {
+    "eyebrow": "Sun* Annual Awards 2025",
+    "title": "HIGHLIGHT KUDOS",
+    "empty": "Hiện tại chưa có Kudos nào.",
+    "filters": {
+      "hashtag": "Hashtag",
+      "department": "Phòng ban",
+      "clear": "Bỏ chọn",
+      "empty": "Không có tùy chọn"
+    },
+    "card": {
+      "copyLink": "Copy Link",
+      "viewDetail": "Xem chi tiết",
+      "like": "Thích"
+    },
+    "pagination": {
+      "prev": "Slide trước",
+      "next": "Slide sau"
+    }
+  },
+  "starTier": {
+    "tier1": "Sunner đã nhận được 10 Kudos và bắt đầu lan tỏa năng lượng ấm áp đến mọi người xung quanh.",
+    "tier2": "Sunner đã nhận được 20 Kudos và chứng minh sức ảnh hưởng của mình qua những hành động lan tỏa tích cực mỗi ngày.",
+    "tier3": "Sunner đã nhận được 50 Kudos và trở thành hình mẫu của sự công nhận, sẻ chia và lan tỏa tinh thần Sun*."
+  }
+}

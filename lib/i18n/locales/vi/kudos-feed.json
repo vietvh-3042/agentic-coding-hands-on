@@ -1,0 +1,42 @@
+{
+  "section": {
+    "subtitle": "Sun* Annual Awards 2025",
+    "title": "ALL KUDOS"
+  },
+  "post": {
+    "copyLink": "Copy Link",
+    "likeAria": "Thích lời cảm ơn này",
+    "attachmentAlt": "Ảnh đính kèm lời cảm ơn",
+    "moreHashtags": "..."
+  },
+  "feed": {
+    "empty": "Hiện tại chưa có Kudos nào."
+  },
+  "lightbox": {
+    "close": "Đóng"
+  },
+  "stats": {
+    "kudosReceived": "Số Kudos bạn nhận được",
+    "kudosSent": "Số Kudos bạn đã gửi",
+    "heartsReceived": "Số tim bạn nhận được",
+    "secretBoxOpened": "Số Secret Box bạn đã mở",
+    "secretBoxUnopened": "Số Secret Box chưa mở",
+    "openSecretBox": "Mở Secret Box"
+  },
+  "giftDialog": {
+    "title": "KHÁM PHÁ SECRET BOX CỦA BẠN",
+    "subtitle": "Click vào box để mở",
+    "footerLabel": "Secretbox chưa mở",
+    "boxAlt": "Hộp quà Secret Box chưa mở",
+    "closeAria": "Đóng",
+    "successTitle": "MỞ SECRET BOX THÀNH CÔNG",
+    "continueSubtitle": "Click vào box để tiếp tục mở",
+    "badgeAlt": "Huy hiệu {{name}}",
+    "error": "Bạn đã hết Secret Box để mở."
+  },
+  "leaderboard": {
+    "risingTitle": "10 SUNNER CÓ SỰ THĂNG HẠNG\nMỚI NHẤT",
+    "giftTitle": "10 SUNNER NHẬN QUÀ\nMỚI NHẤT",
+    "empty": "Chưa có dữ liệu"
+  }
+}

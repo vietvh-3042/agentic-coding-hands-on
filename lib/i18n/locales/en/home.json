@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "logoAlt": "ROOT FURTHER",
+    "content": {
+      "rootAlt": "Root",
+      "furtherAlt": "Further",
+      "intro": "Facing the AI era's whirlwind of change and ever-rising client expectations, Sun* has chosen a strategy of diversifying capabilities — not only striving to become an elite in its own field, but also aiming for a higher goal: making every Sunner a \"problem-solver,\" an expert who can resolve any issue and find answers to every challenge facing projects, clients, and society.\n\nInspired by diverse capabilities, flexible growth, and a spirit of digging deep to break through in the AI era, \"Root Further\" has been chosen as the official theme of the Sun* Annual Awards 2025.\n\nBeyond its surface meaning, \"Root Further\" is the journey of continuously reaching further and rooting deeper, touching hidden \"geological layers\" to keep surviving, rising, and nurturing the ever-burning passion of Sun* people to create value. Like roots that keep pushing deeper into the earth, weaving powerfully through each layer of \"sediment\" to absorb the finest nutrients, Sun* people are also \"absorbing\" nourishment from this era and the market's challenges to renew themselves every day, expand their capabilities, and firmly \"take root\" in the AI era — an entirely new, complex, and unpredictable \"geological layer,\" yet one brimming with potential and opportunity.",
+      "quote": "“A tree with deep roots fears no storm”\n(English proverb)",
+      "closing": "In the face of storms, only trees with strong enough roots can stand firm. An organization whose people are confident in their diverse capabilities, ready to create and embrace challenges, and able to master change is one that not only stays resilient amid turbulence but also seizes every advantage and conquers the challenges of the times. More than just the name of a new chapter in the organization's growth journey, \"Root Further\" is also a call to action — encouraging each of us to dare to believe in ourselves, dare to dig deep and unlock our full potential, dare to break through our limits, and dare to become the most versatile and excellent version of ourselves. Because in the AI era, diverse capabilities and harnessing the power of the times are the prerequisites for lasting success.\n\nNo one knows how many mysterious \"geological layers\" still lie hidden beneath the \"ground\" of today's technology industry and market. What we do know is that once \"Root Further\" becomes our rooted spirit, we will feel not fear but excitement before any uncharted territory on the road ahead. Because we always believe that within those boundless realms lie countless wonders and opportunities for us to rise and grow."
+    },
+    "countdown": {
+      "comingSoon": "Coming soon",
+      "days": "DAYS",
+      "hours": "HOURS",
+      "minutes": "MINUTES"
+    },
+    "eventInfo": {
+      "timeLabel": "Time:",
+      "time": "26/12/2026",
+      "locationLabel": "Location:",
+      "location": "Âu Cơ Art Center",
+      "livestreamNote": "Live broadcast via Livestream"
+    },
+    "cta": {
+      "aboutAwards": "ABOUT AWARDS",
+      "aboutKudos": "ABOUT KUDOS"
+    }
+  },
+  "awards": {
+    "eyebrow": "Sun* Annual Awards 2025",
+    "title": "Award System",
+    "detailLink": "Details",
+    "items": {
+      "top-talent": {
+        "title": "Top Talent",
+        "description": "Honoring the most well-rounded, outstanding individuals"
+      },
+      "top-project": {
+        "title": "Top Project",
+        "description": "Honoring outstanding projects across every dimension, with standout revenue performance"
+      },
+      "top-project-leader": {
+        "title": "Top Project Leader",
+        "description": "Honoring inspiring managers who lead breakout projects"
+      },
+      "best-manager": {
+        "title": "Best Manager",
+        "description": "Honoring managers with strong management capability who lead their teams effectively"
+      },
+      "signature-2025": {
+        "title": "Signature 2025 - Creator",
+        "description": "Honoring managers with strong management capability who lead their teams effectively"
+      },
+      "mvp": {
+        "title": "MVP (Most Valuable Person)",
+        "description": "Honoring managers with strong management capability who lead their teams effectively"
+      }
+    }
+  }
+}

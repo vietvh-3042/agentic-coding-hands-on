@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "bannerLabel": "Sun* Annual Awards 2025 profile banner"
+  },
+  "badges": {
+    "headingSelf": "My icon collection",
+    "headingOther": "Icon collection"
+  },
+  "stats": {
+    "kudosReceived": "Kudos you received",
+    "kudosSent": "Kudos you sent",
+    "heartsReceived": "Hearts you received",
+    "secretBoxOpened": "Secret Boxes opened",
+    "secretBoxUnopened": "Secret Boxes unopened",
+    "openSecretBox": "Open Secret Box"
+  },
+  "writeBar": {
+    "label": "Send thanks and recognition to {{name}}"
+  },
+  "kudos": {
+    "direction": {
+      "received": "Received ({{count}})",
+      "sent": "Sent ({{count}})"
+    },
+    "emptySent": "You haven't sent any Kudos yet.",
+    "endOfFeed": "You've reached the end of the feed.",
+    "loadingMore": "Loading more..."
+  }
+}

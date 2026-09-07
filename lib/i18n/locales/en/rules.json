@@ -1,0 +1,36 @@
+{
+  "title": "Rules",
+  "receiver": {
+    "heading": "KUDOS RECIPIENTS: HERO BADGES FOR POSITIVE IMPACT",
+    "intro": "Based on the number of teammates who send you Kudos, you'll earn the matching Hero badge, shown right next to your profile name."
+  },
+  "tiers": {
+    "newHero": {
+      "count": "1–4 people sent you Kudos",
+      "desc": "The journey of spreading good has begun – the first thank-yous and recognitions have found their way to you."
+    },
+    "risingHero": {
+      "count": "5–9 people sent you Kudos",
+      "desc": "Your presence is growing in your teammates' hearts through your kindness and dedication."
+    },
+    "superHero": {
+      "count": "10–20 people sent you Kudos",
+      "desc": "You've become a trusted and beloved icon – always ready to help and remembered by many teammates."
+    },
+    "legendHero": {
+      "count": "More than 20 people sent you Kudos",
+      "desc": "You've become a legend – leaving an unforgettable mark on the team through your heart and actions."
+    }
+  },
+  "sender": {
+    "heading": "KUDOS SENDERS: COLLECT ALL 6 ICONS, GET AN INSTANT MYSTERY GIFT",
+    "intro": "Every Kudos you send is posted on the system and earns ❤️ from the Sunner community. For every 5 ❤️, you open 1 Secret Box for a chance to receive one of SAA's 6 exclusive icons.",
+    "note": "Sunners who collect all 6 icons will receive a mystery gift from SAA 2025."
+  },
+  "national": {
+    "heading": "NATIONAL KUDOS",
+    "body": "The 5 Kudos with the most ❤️ across all of Sun* will officially become National Kudos and receive a special gift from SAA 2025: Root Further."
+  },
+  "close": "Close",
+  "writeKudos": "Write KUDOS"
+}

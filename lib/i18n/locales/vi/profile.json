@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "bannerLabel": "Ảnh bìa hồ sơ Sun* Annual Awards 2025"
+  },
+  "badges": {
+    "headingSelf": "Bộ sưu tập icon của tôi",
+    "headingOther": "Bộ sưu tập icon"
+  },
+  "stats": {
+    "kudosReceived": "Số Kudos bạn nhận được",
+    "kudosSent": "Số Kudos bạn đã gửi",
+    "heartsReceived": "Số tim bạn nhận được",
+    "secretBoxOpened": "Số Secret Box bạn đã mở",
+    "secretBoxUnopened": "Số Secret Box chưa mở",
+    "openSecretBox": "Mở Secret Box"
+  },
+  "writeBar": {
+    "label": "Gửi lời cảm ơn và ghi nhận đến {{name}}"
+  },
+  "kudos": {
+    "direction": {
+      "received": "Đã nhận ({{count}})",
+      "sent": "Đã gửi ({{count}})"
+    },
+    "emptySent": "Bạn chưa gửi Kudos nào.",
+    "endOfFeed": "Đã hiển thị tất cả Kudos.",
+    "loadingMore": "Đang tải thêm..."
+  }
+}

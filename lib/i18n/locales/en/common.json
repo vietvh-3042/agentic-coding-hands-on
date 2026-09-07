@@ -1,0 +1,23 @@
+{
+  "copyright": "Copyright © 2025 Sun*",
+  "detail": "Details",
+  "userMenu": {
+    "profile": "Profile",
+    "adminDashboard": "Admin Dashboard",
+    "signOut": "Sign out"
+  },
+  "notifications": {
+    "empty": "No new notifications"
+  },
+  "widget": {
+    "writeKudos": "Write KUDOS",
+    "saaRules": "Rules",
+    "close": "Close",
+    "menu": "Quick actions menu"
+  },
+  "kudos": {
+    "kicker": "Recognition Movement",
+    "title": "Sun* Kudos",
+    "body": "WHAT'S NEW IN SAA 2025\nA peer recognition and appreciation activity — held for the first time for all Sunners. Launching in November 2025, it encourages Sun* people to share words of recognition and thanks to colleagues on the system announced by the organizers. These will serve as reference material for the Heads Council when selecting award winners."
+  }
+}

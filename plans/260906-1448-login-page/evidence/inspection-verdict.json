@@ -1,0 +1,84 @@
+{
+  "score": 9.0,
+  "criticalCount": 0,
+  "decision": "SEALED",
+  "acceptanceCovered": [
+    "SC-001 an unauthenticated visitor to a protected route is redirected to /login — proven by e2e/auth-guard.spec.ts across /, /about, /countdown, /sun-kudos, /award-info; RED before proxy.ts existed, GREEN after.",
+    "SC-003 the Google button is disabled and exposes aria-busy while authenticating — proven by e2e/login-click-contract.spec.ts asserting both states while the authorize navigation is held pending.",
+    "SC-005 a failed or cancelled sign-in renders a localized error in a role=alert region — proven by e2e/login-error-state.spec.ts; copy comes from the login i18n namespace in en and vi, no hard-coded string.",
+    "SC-006 the button click issues an authorize request with provider=google and a query-string-free redirect_to — proven by e2e/login-click-contract.spec.ts with exact equality on redirect_to = http://127.0.0.1:3000/auth/callback.",
+    "SC-007 the callback never reflects an inbound next or redirect_to into a redirect target — proven by live curl probes: next and redirect_to set to https://evil.test produced 307 to /login?error=oauth_failed with zero occurrences of evil.test in any response header."
+  ],
+  "regressionChecked": [
+    "Baseline repair did not alter runtime behaviour: react-i18next v17's only breaking change is <Trans> auto-key serialization and this codebase uses zero <Trans> — verified by grep; only useTranslation, I18nextProvider and initReactI18next are imported.",
+    "Removing the dead next-intl plugin from next.config.ts kept images.remotePatterns verbatim; pnpm build succeeds and all 7 routes still compile.",
+    "NEXT_LOCALE survives the proxy response rebuild — the guard returns the rebuilt supabaseResponse which carries forward request cookies; app renders lang=vi as before.",
+    "Adding e2e/**/*.ts to a tsconfig include that already globbed **/*.ts did not break pnpm typecheck (exit 0).",
+    "Prettier reformatting was confined to files this change touched; ~140 pre-existing unformatted files were deliberately left untouched to avoid diff churn.",
+    "supabase/config.toml edit was a single allow-list line; no migration, no db reset, no container restart — the pre-existing 11-container stack and its 9 migrations were left intact."
+  ],
+  "contractStatus": "PASS",
+  "refuted": [],
+  "unproven": [
+    "SC-002 an authenticated visitor to /login is redirected away to the post-login target — the FR-102 branch exists in lib/supabase/proxy.ts but has never been exercised against a real session. Unautomatable under the agreed Docker-free E2E scope because the guard calls getUser(), which round-trips to GoTrue.",
+    "SC-004 a successful sign-in lands the user on /countdown before launch or /about after — the happy path has never been executed; it needs real Google OAuth credentials.",
+    "FR-401 the selected language survives the whole sign-in redirect chain — only the proxy hop was reasoned about; the full 3-hop chain through Google has never been walked."
+  ],
+  "reachableRegressions": [],
+  "findings": [
+    {
+      "severity": "high",
+      "category": "correctness",
+      "location": "lib/supabase/proxy.ts:29",
+      "summary": "Both guard redirect branches returned a bare NextResponse.redirect, discarding cookies Supabase had refreshed during the request. With enable_refresh_token_rotation=true this strands the browser on a rotated-away refresh token and causes random sign-outs. Fixed by routing both branches through redirectPreservingCookies. Found by code reading; no test could catch it because a Docker-free suite never triggers a rotation.",
+      "disposition": "Accept"
+    },
+    {
+      "severity": "high",
+      "category": "correctness",
+      "location": "app/auth/callback/route.ts:64",
+      "summary": "The callback built absolute redirect URLs, which Next resolves to its own configured hostname under next start regardless of the inbound Host header. A user signing in at 127.0.0.1:3000 had the session cookie written for 127.0.0.1 then was redirected to localhost:3000, a different cookie host, so sign-in silently never stuck. A first fix using request.nextUrl.clone() was verified NOT to work; fixed by switching every exit to redirect() from next/navigation, which emits a host-relative Location.",
+      "disposition": "Accept"
+    },
+    {
+      "severity": "high",
+      "category": "error-handling",
+      "location": "components/login/hero-section.tsx:41",
+      "summary": "handleLogin had no try/catch. createClient() throws on missing env vars and signInWithOAuth can reject outright, leaving loading true so the button stayed disabled behind a spinner with no message and no retry. Fixed by wrapping the body; success deliberately does not reset loading because the browser is navigating away.",
+      "disposition": "Accept"
+    },
+    {
+      "severity": "high",
+      "category": "error-handling",
+      "location": "app/auth/callback/route.ts:52",
+      "summary": "exchangeCodeForSession was unguarded and Route Handlers are not covered by error.tsx boundaries, so a thrown exception produced a bare 500 instead of the promised /login?error=oauth_failed redirect. Fixed by extracting exchangeCode() so the try/catch cannot enclose a redirect() call, which signals by throwing NEXT_REDIRECT and would otherwise be swallowed.",
+      "disposition": "Accept"
+    },
+    {
+      "severity": "medium",
+      "category": "documentation",
+      "location": "docs/system/architecture.md:1-128",
+      "summary": "The document claimed protected pages perform a defense-in-depth getUser() check; grep confirmed none of the four protected pages do. Reframed as a known gap and recommended hardening rather than deleted, because the Next.js 16 Proxy docs warn Proxy alone is not an authorization boundary.",
+      "disposition": "Accept"
+    },
+    {
+      "severity": "low",
+      "category": "test-coverage",
+      "location": "e2e/auth-guard.spec.ts:9",
+      "summary": "The / route case is a tautology: app/page.tsx is an unconditional redirect('/login') stub, so that assertion passes with or without the guard and can never catch a regression on /. The other four routes provide genuine coverage.",
+      "disposition": "Defer"
+    },
+    {
+      "severity": "low",
+      "category": "configuration",
+      "location": "package.json:1",
+      "summary": "next-intl remains a declared dependency with zero importers after its build wiring was removed in the baseline repair. Harmless but dead weight; removal deferred to avoid widening this change's scope.",
+      "disposition": "Defer"
+    }
+  ],
+  "riskGate": {
+    "touchesSensitiveArea": true,
+    "signoffRequired": true,
+    "humanSignedOff": false
+  }
+}

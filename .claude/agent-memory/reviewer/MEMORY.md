@@ -1,0 +1,1 @@
+- [rebuild-spec template broken artifact links](rebuild-spec-template-broken-artifact-links.md) — § 5.5 example paths in technical-spec-template.md are wrong depth/filename; propagates to generated specs.

@@ -1,0 +1,36 @@
+{
+  "title": "Thể lệ",
+  "receiver": {
+    "heading": "NGƯỜI NHẬN KUDOS: HUY HIỆU HERO CHO NHỮNG ẢNH HƯỞNG TÍCH CỰC",
+    "intro": "Dựa trên số lượng đồng đội gửi trao Kudos, bạn sẽ sở hữu Huy hiệu Hero tương ứng, được hiển thị trực tiếp cạnh tên profile"
+  },
+  "tiers": {
+    "newHero": {
+      "count": "Có 1-4 người gửi Kudos cho bạn",
+      "desc": "Hành trình lan tỏa điều tốt đẹp bắt đầu – những lời cảm ơn và ghi nhận đầu tiên đã tìm đến bạn."
+    },
+    "risingHero": {
+      "count": "Có 5-9 người gửi Kudos cho bạn",
+      "desc": "Hình ảnh bạn đang lớn dần trong trái tim đồng đội bằng sự tử tế và cống hiến của mình."
+    },
+    "superHero": {
+      "count": "Có 10–20 người gửi Kudos cho bạn",
+      "desc": "Bạn đã trở thành biểu tượng được tin tưởng và yêu quý, người luôn sẵn sàng hỗ trợ và được nhiều đồng đội nhớ đến."
+    },
+    "legendHero": {
+      "count": "Có hơn 20 người gửi Kudos cho bạn",
+      "desc": "Bạn đã trở thành huyền thoại – người để lại dấu ấn khó quên trong tập thể bằng trái tim và hành động của mình."
+    }
+  },
+  "sender": {
+    "heading": "NGƯỜI GỬI KUDOS: SƯU TẬP TRỌN BỘ 6 ICON, NHẬN NGAY PHẦN QUÀ BÍ ẨN",
+    "intro": "Mỗi lời Kudos bạn gửi sẽ được đăng tải trên hệ thống và nhận về những lượt ❤️ từ cộng đồng Sunner. Cứ mỗi 5 lượt ❤️, bạn sẽ được mở 1 Secret Box, với cơ hội nhận về một trong 6 icon độc quyền của SAA.",
+    "note": "Những Sunner thu thập trọn bộ 6 icon sẽ nhận về một phần quà bí ẩn từ SAA 2025."
+  },
+  "national": {
+    "heading": "KUDOS QUỐC DÂN",
+    "body": "5 Kudos nhận về nhiều ❤️ nhất toàn Sun* sẽ chính thức trở thành Kudos Quốc Dân và được trao phần quà đặc biệt từ SAA 2025: Root Further."
+  },
+  "close": "Đóng",
+  "writeKudos": "Viết KUDOS"
+}

@@ -1,0 +1,18 @@
+{
+  "doc_shas": {},
+  "fcode_index_sha": "8c7c24da98e5b2f22ace4c6ebbeca9bc5fa6180cc4d6b5ae7688b419aa0d5c49",
+  "last_api_contracts_run_sha": "",
+  "last_feature_spec_run_sha": "9f9007be3397bb118a1ad1f1751e70472e3592b5",
+  "last_flows_run_sha": "",
+  "last_glossary_run_sha": "",
+  "last_rebuild_sha": "",
+  "last_test_cases_run_sha": "",
+  "mode": "full",
+  "primary_lang": "en",
+  "rebuilt_at": "2026-09-07T05:42:57Z",
+  "schema_version": "22.1.0",
+  "screen_spec_shas": {
+    "SCR001": "6bbd770d114adb94a3e9095e88bb023077820c4829a5edc1522c4e519d924499"
+  },
+  "translations": {}
+}
