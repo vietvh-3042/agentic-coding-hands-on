@@ -2,6 +2,7 @@
   "name": "agentic-coding-hands-on",
   "version": "0.1.0",
   "private": true,
+  "description": "A multilingual kudos board for celebrating teammates and sharing appreciation.",
   "packageManager": "pnpm@10.28.0",
   "engines": {
     "node": ">=22.0.0"
