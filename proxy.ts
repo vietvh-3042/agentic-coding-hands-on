@@ -1,5 +1,5 @@
 import { type NextRequest } from "next/server";
-import { updateSession } from "@/lib/supabase/proxy";
+import { updateSession } from "@/shared/infrastructure/supabase/proxy";
 
 // Next.js 16 renamed middleware.ts -> proxy.ts and the exported function
 // middleware -> proxy. Proxy always executes on the Node.js server — this

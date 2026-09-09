@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Montserrat } from "next/font/google";
-import SiteHeader from "@/components/homepage/site-header";
-import KvBanner from "@/components/kudos-board/kv-banner";
-import WriteKudosBar from "@/components/kudos-board/write-kudos-bar";
-import HighlightSection from "@/components/kudos-board/highlight-section";
-import SpotlightSection from "@/components/kudos-board/spotlight-section";
-import AllKudosSection from "@/components/kudos-board/all-kudos-section";
-import WidgetButton from "@/components/homepage/widget-button";
-import SiteFooter from "@/components/common/site-footer";
-import { getHashtags } from "@/lib/kudos/hashtags";
+import SiteHeader from "@/features/homepage/presentation/site-header";
+import KvBanner from "@/features/kudos/presentation/board/kv-banner";
+import WriteKudosBar from "@/features/kudos/presentation/board/write-kudos-bar";
+import HighlightSection from "@/features/kudos/presentation/board/highlight-section";
+import SpotlightSection from "@/features/kudos/presentation/board/spotlight-section";
+import AllKudosSection from "@/features/kudos/presentation/board/all-kudos-section";
+import WidgetButton from "@/features/homepage/presentation/widget-button";
+import SiteFooter from "@/shared/ui/site-footer";
+import { getHashtags } from "@/features/kudos/infrastructure/hashtags";
 import {
   getKudoFeedPage,
   getHighlightKudos,
   getSidebarOverview,
   getSpotlightBoard,
   getViewerId,
-} from "@/lib/kudos/board-queries";
-import type { BoardFilter } from "@/lib/kudos/types";
+} from "@/features/kudos/infrastructure/board-queries";
+import type { BoardFilter } from "@/features/kudos/domain/types";
 
 // SAA brand font, exposed as --font-montserrat for the kudos-board components
 // (same pattern as app/page.tsx and app/award-info/page.tsx).
@@ -90,7 +90,7 @@ export default async function SunKudosPage({ searchParams }: SunKudosPageProps) 
         <AllKudosSection key={filter.hashtagId ?? "all"} initialFeed={feedPage} hashtags={hashtags} sidebar={sidebar} />
       </main>
       <SiteFooter />
-      <WidgetButton />
+      <WidgetButton hashtags={hashtags} />
     </div>
   );
 }

@@ -33,8 +33,8 @@ for custom backend business logic beyond validation, a weighted random draw, and
 sync.
 
 **Decision**: Use Supabase directly from the Next.js server (Server Components + Server Actions) via
-`@supabase/ssr`. No `app/api/**` routes exist in this codebase — the only `route.ts` is the OAuth
-`auth/callback` handler. Mutations go through Next.js Server Actions
+`@supabase/ssr`. The authenticated `app/api/kudos/feed/route.ts` is a read-only adapter for
+client-side pagination; mutations go through Next.js Server Actions
 (`app/sun-kudos/actions/*.ts`), which call PostgREST-backed Supabase client calls, not a
 hand-rolled REST layer.
 
@@ -87,8 +87,9 @@ Server Action could decrement `boxes_unopened` with no badge granted.
 - **Data Encryption**: `[UNVERIFIED]` — no encryption-at-rest/in-transit configuration is visible in
   application code; this is delegated entirely to the Supabase/Postgres platform and local Docker
   stack, out of this repo's scope.
-- **API Security**: No custom API surface exists (`app/api/**` is absent). The only non-Server-Action
-  HTTP entry point is `app/auth/callback/route.ts`. All other server-side mutation entry points are
+- **API Security**: The read-only Kudos feed adapter validates the Supabase session before querying.
+  The OAuth handler and Server Actions retain their existing auth boundaries. All server-side
+  mutation entry points are
   Next.js Server Actions (`"use server"` functions), each independently re-validating the session
   (`getUser()`) and every client-supplied field — none trust `formData` or an argument as
   pre-validated, per the boundary-check comments throughout `app/sun-kudos/actions/*.ts`.

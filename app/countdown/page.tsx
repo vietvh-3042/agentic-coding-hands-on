@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import CountdownTimer from "@/components/countdown/countdown-timer";
+import CountdownTimer from "@/features/countdown/presentation/countdown/countdown-timer";
 
 // SAA brand font, exposed as --font-montserrat for the countdown components
 // (same pattern as the other SAA pages).

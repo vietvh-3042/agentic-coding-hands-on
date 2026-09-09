@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { cookies } from "next/headers";
-import I18nProvider from "@/components/common/i18n-provider";
-import { cookieName, resolveLocale } from "@/lib/i18n/settings";
+import I18nProvider from "@/shared/ui/i18n-provider";
+import { cookieName, resolveLocale } from "@/shared/i18n/settings";
+import QueryProvider from "@/shared/providers/query-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -48,7 +49,9 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
-        <I18nProvider initialLocale={locale}>{children}</I18nProvider>
+        <QueryProvider>
+          <I18nProvider initialLocale={locale}>{children}</I18nProvider>
+        </QueryProvider>
       </body>
     </html>
   );

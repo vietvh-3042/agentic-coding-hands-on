@@ -15,6 +15,7 @@ graph TB
         SC["lib/supabase/server.ts - server client factory"]
         BC["lib/supabase/client.ts - browser client factory"]
         PAGE["app/sun-kudos/page.tsx - Server Component,\ncalls board-queries.ts + hashtags.ts"]
+        API["app/api/kudos/feed/route.ts - authenticated feed API"]
         SA["Server Actions: submitKudoAction, heartKudo,\nunheartKudo, openSecretBox, loadFeedPage"]
         PROFILE_PAGE["app/profile/page.tsx - Server Component,\ncalls lib/profile/* read layer (added 2026-09-07)"]
         PROFILE_SA["Server Action: loadProfileFeedPage\n(added 2026-09-07)"]
@@ -37,6 +38,8 @@ graph TB
     PROXY -->|getUser via its own inline createServerClient, not SC| GT
 
     BOARD -->|server-fetch, no subscription, no polling| PAGE
+    BOARD -->|Axios + TanStack Query, next pages| API
+    API -->|read via server Supabase client| PG
     PAGE -->|read via SC| PG
     BOARD -->|submit / heart / unheart / load more| SA
     SA -->|getUser via SC, then re-validated write| PG
@@ -64,7 +67,9 @@ graph TB
 | Auth                      | Supabase Auth (GoTrue) + Google OAuth, via `@supabase/ssr` / `@supabase/supabase-js` | ^0.12.6 / ^2.115.0                  |
 | Database                  | Supabase-managed Postgres (local Docker stack for dev)                               | local Supabase stack                |
 | File storage              | Supabase Storage, `kudos-images` bucket (public)                                     | local Supabase stack                |
-| Cache                     | — none in-repo (see Notes)                                                           | —                                   |
+| Client data/cache         | TanStack Query                                                                       | ^5.102.8                            |
+| Client state              | Zustand                                                                              | ^5.0.15                             |
+| HTTP client               | Axios                                                                                | ^1.20.0                             |
 | Queue                     | — none in-repo (see Notes)                                                           | —                                   |
 | Test runner               | Playwright (E2E only, no unit-test runner in-repo)                                   | @playwright/test 1.63.0             |
 | Package manager / runtime | pnpm, Node.js                                                                        | 10.28.0, 22+                        |
@@ -72,13 +77,13 @@ graph TB
 **Notes on the scoping above** (mirrors `AGENTS.md`'s own "Stack" section, which lists framework,
 runtime, styling, and component tooling but omits lint/format/git-hook tooling as non-architectural):
 
-- **Backend row**: there is no custom backend service or `app/api/**` directory. The Next.js server
-  itself is the only application tier; it calls Supabase directly. This is a deliberate BaaS
-  architecture, not a gap — see [system-overview.md](system-overview.md) § Decision 1.
-- **Cache / Queue rows**: no cache layer (Redis, in-memory, CDN cache-control beyond framework
-  defaults) or queue/worker system exists anywhere in the scanned inventory (confirmed absent by the
-  Wave 0 scout's Background Logic Source Inventory: `queue-worker` and all cache-adjacent BL types
-  return zero hits).
+- **Backend row**: there is no separate backend service. The Next.js server is the only application
+  tier; it calls Supabase directly from Server Components, Server Actions, and the authenticated
+  feed route. This is a deliberate BaaS architecture, not a gap — see
+  [system-overview.md](system-overview.md) § Decision 1.
+- **Server cache / Queue rows**: no Redis, in-memory server cache, or queue/worker system exists.
+  TanStack Query is a browser-side request cache only; it does not replace Supabase or server
+  authorization.
 - ESLint, Prettier, Husky, commitlint, `lint-staged` are dev tooling, not architecture — excluded
   here as `AGENTS.md` itself excludes them from its "Stack" section.
 

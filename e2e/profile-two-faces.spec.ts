@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { psql } from "./support/psql";
-import viProfile from "../lib/i18n/locales/vi/profile.json";
-import viKudos from "../lib/i18n/locales/vi/kudos.json";
+import viProfile from "../shared/i18n/locales/vi/profile.json";
+import viKudos from "../shared/i18n/locales/vi/kudos.json";
 
 /**
  * The two faces of `/profile`'s statistics slot (phase 04, MoMorph screen

@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { psql } from "./support/psql";
-import viProfile from "../lib/i18n/locales/vi/profile.json";
+import viProfile from "../shared/i18n/locales/vi/profile.json";
 
 /**
  * `/profile` route resolution (phase 03, MoMorph screen 3FoIx6ALVb) —

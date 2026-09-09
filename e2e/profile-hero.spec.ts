@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { psql } from "./support/psql";
-import viProfile from "../lib/i18n/locales/vi/profile.json";
-import enProfile from "../lib/i18n/locales/en/profile.json";
+import viProfile from "../shared/i18n/locales/vi/profile.json";
+import enProfile from "../shared/i18n/locales/en/profile.json";
 
 /**
  * Keyvisual hero + badge collection (phase 03, MoMorph screen 3FoIx6ALVb) —

@@ -10,7 +10,10 @@
 
 ## Backend Routes
 
-> **Completeness Contract:** emit exactly ONE row per leaf route (HTTP method + concrete path). This project has no `app/api/**` directory — the only conventional Route Handler is the OAuth callback below. Next.js Server Actions (`"use server"` functions) are not HTTP routes with a stable path, but are captured in their own section per this run's instructions.
+> **Completeness Contract:** emit exactly ONE row per leaf route (HTTP method + concrete path). The
+> conventional Route Handlers are the OAuth callback and authenticated Kudos feed below. Next.js
+> Server Actions (`"use server"` functions) are not HTTP routes with a stable path, but are captured
+> in their own section per this run's instructions.
 
 > **Code Column Contract:** `Code` is `ROUTE###`, contiguous and global. `Owner F###` is back-filled from `feature-list.md` / `_canonical-fcodes.json` after the Wave 5.6 gate; a route owned jointly by two features lists both, slash-separated.
 
@@ -20,7 +23,13 @@
 | ------ | -------------- | -------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | GET    | /auth/callback | ROUTE001 | F001       | default export (OAuth code-exchange: reads `code` query param, exchanges via `createClient().auth.exchangeCodeForSession`, redirects to `/countdown` or `/about` per `isBeforeLaunch()`, or `/login?error=oauth_failed` on any failure) | proxy.ts (path is `isPublicPath` — excluded from the auth-required redirect, see Frontend Routes note) |
 
-**Summary**: 1 conventional Route Handler. No `app/api/**` directory exists in this codebase.
+### File: app/api/kudos/feed/route.ts
+
+| Method | Path            | Code     | Owner F### | Handler                                                                                                                                    | Middleware                                                 |
+| ------ | --------------- | -------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
+| GET    | /api/kudos/feed | ROUTE008 | F002       | Reads one authenticated keyset-paginated feed page through `getKudoFeedPage`; accepts `cursor`, `hashtagId`, and `department` query params | proxy.ts auth guard plus route-level `getViewerId()` check |
+
+**Summary**: 2 conventional Route Handlers.
 
 ## Server Actions
 

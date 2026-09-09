@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import SiteHeader from "@/components/homepage/site-header";
-import KeyvisualBanner from "@/components/awards/keyvisual-banner";
-import CategoryNav from "@/components/awards/category-nav";
-import AwardDetailSection from "@/components/awards/award-detail-section";
-import SunkudosSection from "@/components/homepage/sunkudos-section";
-import WidgetButton from "@/components/homepage/widget-button";
-import SiteFooter from "@/components/common/site-footer";
+import SiteHeader from "@/features/homepage/presentation/site-header";
+import KeyvisualBanner from "@/features/awards/presentation/awards/keyvisual-banner";
+import CategoryNav from "@/features/awards/presentation/awards/category-nav";
+import AwardDetailSection from "@/features/awards/presentation/awards/award-detail-section";
+import SunkudosSection from "@/features/homepage/presentation/sunkudos-section";
+import KudosWidget from "@/features/homepage/presentation/kudos-widget";
+import SiteFooter from "@/shared/ui/site-footer";
 
 // SAA brand font, exposed as --font-montserrat for the awards components
 // below (same pattern as app/page.tsx).
@@ -45,7 +45,7 @@ export default function AwardsPage() {
         <SunkudosSection />
       </main>
       <SiteFooter />
-      <WidgetButton />
+      <KudosWidget />
     </div>
   );
 }

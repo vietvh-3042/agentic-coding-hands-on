@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Montserrat, Montserrat_Alternates } from "next/font/google";
-import SiteHeader from "@/components/homepage/site-header";
-import HeroSection from "@/components/homepage/hero-section";
-import AwardSection from "@/components/homepage/award-section";
-import SunkudosSection from "@/components/homepage/sunkudos-section";
-import WidgetButton from "@/components/homepage/widget-button";
-import SiteFooter from "@/components/common/site-footer";
+import SiteHeader from "@/features/homepage/presentation/site-header";
+import HeroSection from "@/features/homepage/presentation/hero-section";
+import AwardSection from "@/features/homepage/presentation/award-section";
+import SunkudosSection from "@/features/homepage/presentation/sunkudos-section";
+import KudosWidget from "@/features/homepage/presentation/kudos-widget";
+import SiteFooter from "@/shared/ui/site-footer";
 
 // SAA brand fonts. Sections consume these via the CSS variables below
 // (--font-montserrat / --font-montserrat-alternates).
@@ -47,7 +47,7 @@ export default function HomePage() {
         </section>
       </main>
       <SiteFooter />
-      <WidgetButton />
+      <KudosWidget />
     </div>
   );
 }

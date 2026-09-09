@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat, Montserrat_Alternates } from "next/font/google";
-import SiteHeader from "@/components/login/site-header";
-import HeroSection from "@/components/login/hero-section";
-import SiteFooter from "@/components/login/site-footer";
+import SiteHeader from "@/features/auth/presentation/login/site-header";
+import HeroSection from "@/features/auth/presentation/login/hero-section";
+import SiteFooter from "@/features/auth/presentation/login/site-footer";
 
 const montserrat = Montserrat({
   subsets: ["latin", "vietnamese"],

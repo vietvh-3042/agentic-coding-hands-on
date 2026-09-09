@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { notFound, redirect } from "next/navigation";
-import SiteHeader from "@/components/homepage/site-header";
-import SiteFooter from "@/components/common/site-footer";
-import ProfileHero from "@/components/profile/profile-hero";
-import ProfileBadgeCollection from "@/components/profile/profile-badge-collection";
-import ProfileStatsCard from "@/components/profile/profile-stats-card";
-import ProfileWriteBar from "@/components/profile/profile-write-bar";
-import ProfileKudosSection from "@/components/profile/profile-kudos-section";
-import { createClient } from "@/lib/supabase/server";
-import { resolveProfileId, type ProfileSearchParams } from "@/lib/profile/resolve-target";
-import { getProfileHeader, getProfileStats, getUnlockedIcons } from "@/lib/profile/queries";
-import { getReceivedFeed } from "@/lib/profile/feed-queries";
-import { getHashtags } from "@/lib/kudos/hashtags";
+import SiteHeader from "@/features/homepage/presentation/site-header";
+import SiteFooter from "@/shared/ui/site-footer";
+import ProfileHero from "@/features/profile/presentation/profile-hero";
+import ProfileBadgeCollection from "@/features/profile/presentation/profile-badge-collection";
+import ProfileStatsCard from "@/features/profile/presentation/profile-stats-card";
+import ProfileWriteBar from "@/features/profile/presentation/profile-write-bar";
+import ProfileKudosSection from "@/features/profile/presentation/profile-kudos-section";
+import { createClient } from "@/shared/infrastructure/supabase/server";
+import { resolveProfileId, type ProfileSearchParams } from "@/features/profile/domain/resolve-target";
+import { getProfileHeader, getProfileStats, getUnlockedIcons } from "@/features/profile/infrastructure/queries";
+import { getReceivedFeed } from "@/features/profile/infrastructure/feed-queries";
+import { getHashtags } from "@/features/kudos/infrastructure/hashtags";
 
 // SAA brand font, exposed as --font-montserrat (same pattern as
 // app/sun-kudos/page.tsx and app/award-info/page.tsx).
@@ -90,7 +90,7 @@ export default async function ProfilePage({ searchParams }: ProfilePageProps) {
           {stats ? (
             <ProfileStatsCard stats={stats} />
           ) : (
-            <ProfileWriteBar recipient={{ id: header.id, displayName: header.displayName }} />
+            <ProfileWriteBar recipient={{ id: header.id, displayName: header.displayName }} hashtags={hashtags} />
           )}
         </div>
         <div className="mx-auto w-full max-w-6xl px-6 lg:px-0">

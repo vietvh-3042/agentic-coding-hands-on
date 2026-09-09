@@ -4,8 +4,8 @@
 **Generated**: 2026-09-07
 **Analysis Scope**: `app/auth/callback/route.ts`, `app/sun-kudos/actions/*.ts` (4 files), `open_secret_box()` RPC (`supabase/migrations/20260906192500_secret_box_draw.sql`), `lib/supabase/proxy.ts`/`proxy.ts`, direct browser-side PostgREST table access under RLS (all 9 tables + 1 view), cross-checked against `route-list.md` (gate-passed, W1) and `permissions.md`/`permissions-matrix.md` (gate-passed, W3).
 
-> **No `app/api/**` REST surface exists in this codebase.** This is a Next.js 16 App Router project
-> with zero conventional REST endpoints. Its full callable surface is: one Route Handler (OAuth
+> The app has one authenticated read-only `app/api/**` adapter alongside the OAuth handler. This is
+> a Next.js 16 App Router project. Its full callable surface is: two Route Handlers (OAuth callback
 > callback), 6 Server Actions across 4 files, one Postgres RPC, direct PostgREST table/view reads
 > from the browser Supabase client (RLS-gated, not routed through any Next.js layer), and the
 > request-interception proxy. Every row below is transcribed from source/live-DB, none invented.
@@ -18,7 +18,7 @@
 | ------ | ---------------- | -------- | -------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | GET    | `/auth/callback` | ROUTE001 | default export, `app/auth/callback/route.ts` | Query param `code` (OAuth authorization code from Google) | HTTP redirect: `/countdown` (before launch) or `/about` (after launch) on success, per `isBeforeLaunch()`; `/login?error=oauth_failed` on any failure | Public (`isPublicPath` in `lib/supabase/proxy.ts`) — this IS the auth-establishing endpoint | Exchanges `code` for a session via `createClient().auth.exchangeCodeForSession(code)`; on first sign-in this indirectly fires the `handle_new_user()` DB trigger (BL001) that inserts the caller's `profiles` row |
 
-**Summary**: 1 Route Handler. No `app/api/**` directory exists anywhere in this codebase.
+**Summary**: 2 Route Handlers, 6 Server Actions, one Postgres RPC, and the request proxy.
 
 ### Kudos Board — Server Actions (`app/sun-kudos/actions/`)
 

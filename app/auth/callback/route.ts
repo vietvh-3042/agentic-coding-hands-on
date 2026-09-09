@@ -1,7 +1,7 @@
 import { type NextRequest } from "next/server";
 import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
-import { isBeforeLaunch } from "@/lib/countdown-config";
+import { createClient } from "@/shared/infrastructure/supabase/server";
+import { isBeforeLaunch } from "@/features/countdown/domain/config";
 
 /**
  * OAuth code-exchange callback for Supabase Google sign-in.
