@@ -18,8 +18,13 @@
   "tooltip": {
     "receivedAt": "Nhận Kudos lúc {{time}}"
   },
+  "ticker": {
+    "entry": "{{time}} {{name}} đã nhận được một Kudos mới"
+  },
   "emptyState": {
-    "title": "Chưa có dữ liệu",
-    "description": "Không tìm thấy Sunner phù hợp"
+    "title": "Chưa có dữ liệu"
+  },
+  "noSearchResult": {
+    "title": "Không tìm thấy Sunner phù hợp"
   }
 }

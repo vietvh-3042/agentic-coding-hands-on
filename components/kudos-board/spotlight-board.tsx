@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import CustomSvgIcon from "@/components/common/custom-svg-icon";
 import type { SpotlightNode } from "@/lib/kudos/board-queries";
 import SpotlightNameNode from "./spotlight-name-node";
+import { formatTimeOfDay } from "./format-time-of-day";
 import SpotlightZoomControls from "./spotlight-zoom-controls";
 import { layoutSpotlightNodes } from "./spotlight-layout";
 import { useSpotlightPanZoom } from "./use-spotlight-pan-zoom";
@@ -12,11 +13,12 @@ import { useSpotlightPanZoom } from "./use-spotlight-pan-zoom";
 const BOARD_WIDTH = 1157;
 const BOARD_HEIGHT = 548;
 
-// Decorative "recent activity" ticker (node 2940:14230 + 3004:15995-15999),
-// 6 identical rows at decreasing opacity — no DB source, moved here verbatim
-// from the retired mock data module for this board.
-const TICKER_MESSAGE = "08:30PM Charles Barnes just received a new Kudos";
+// "Recent activity" ticker (node 2940:14230 + 3004:15995-15999): up to 6 rows
+// stacked bottom-up at increasing opacity. The design shows one placeholder
+// name repeated 6x; the rows are fed from the real recipient list instead
+// (newest last, so the brightest row is the most recent).
 const TICKER_OPACITIES = [0.1, 0.3, 0.5, 0.7, 1, 1];
+const TICKER_SIZE = TICKER_OPACITIES.length;
 
 interface SpotlightBoardProps {
   nodes: readonly SpotlightNode[];
@@ -48,6 +50,22 @@ export default function SpotlightBoard({ nodes, totalCount }: SpotlightBoardProp
     if (!query) return laidOutNodes;
     return laidOutNodes.filter((item) => item.name.toLowerCase().includes(query));
   }, [laidOutNodes, searchTerm]);
+
+  // Newest `TICKER_SIZE` recipients, oldest first — the last row (brightest
+  // opacity) is therefore the most recent kudos. Unaffected by the search
+  // box: the ticker reports board-wide activity, not the filtered view.
+  const tickerEntries = useMemo(
+    () =>
+      [...nodes]
+        .sort((a, b) => a.receivedAt.localeCompare(b.receivedAt))
+        .slice(-TICKER_SIZE)
+        .map((node) => ({
+          id: node.id,
+          time: formatTimeOfDay(node.receivedAt),
+          name: node.name.trim(),
+        })),
+    [nodes],
+  );
 
   return (
     <div
@@ -93,9 +111,12 @@ export default function SpotlightBoard({ nodes, totalCount }: SpotlightBoardProp
         onPointerLeave={stopDragging}
       >
         {filteredNames.length === 0 ? (
-          <div className="flex size-full flex-col items-center justify-center gap-1 text-center">
-            <p className="text-base font-bold text-white">{t("kudosSpotlight:emptyState.title")}</p>
-            <p className="text-xs text-white/60">{t("kudosSpotlight:emptyState.description")}</p>
+          // Two distinct states, never both: an empty board (B.7's "empty"
+          // state) versus a search that matched nothing.
+          <div className="flex size-full flex-col items-center justify-center text-center">
+            <p className="text-base font-bold text-white">
+              {nodes.length === 0 ? t("kudosSpotlight:emptyState.title") : t("kudosSpotlight:noSearchResult.title")}
+            </p>
           </div>
         ) : (
           filteredNames.map((item) => (
@@ -109,14 +130,26 @@ export default function SpotlightBoard({ nodes, totalCount }: SpotlightBoardProp
         )}
       </div>
 
-      {/* Decorative "recent activity" ticker — node 2940:14230 + 3004:15995-15999 */}
-      <div className="pointer-events-none absolute bottom-6 left-6 z-0 flex max-w-[70%] flex-col gap-0.75 overflow-hidden">
-        {TICKER_OPACITIES.map((opacity, index) => (
-          <p key={index} style={{ opacity }} className="truncate text-sm font-bold tracking-[0.1px] text-white">
-            {TICKER_MESSAGE}
-          </p>
-        ))}
-      </div>
+      {/* "Recent activity" ticker — node 2940:14230 + 3004:15995-15999. Hidden
+          entirely on an empty board: no activity means nothing to announce. */}
+      {tickerEntries.length > 0 && (
+        <div
+          data-testid="spotlight-ticker"
+          className="pointer-events-none absolute bottom-6 left-6 z-0 flex max-w-[70%] flex-col gap-0.75 overflow-hidden"
+        >
+          {tickerEntries.map((entry, index) => (
+            <p
+              key={entry.id}
+              // Align to the bottom of the opacity ramp so the newest row is
+              // always the brightest, even with fewer than TICKER_SIZE rows.
+              style={{ opacity: TICKER_OPACITIES[TICKER_OPACITIES.length - tickerEntries.length + index] }}
+              className="truncate text-sm font-bold tracking-[0.1px] text-white"
+            >
+              {t("kudosSpotlight:ticker.entry", { time: entry.time, name: entry.name })}
+            </p>
+          ))}
+        </div>
+      )}
 
       {/* mm:3007:17479 B.7.2_Pan zoom */}
       <SpotlightZoomControls

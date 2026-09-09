@@ -18,8 +18,13 @@
   "tooltip": {
     "receivedAt": "Received Kudos at {{time}}"
   },
+  "ticker": {
+    "entry": "{{time}} {{name}} just received a new Kudos"
+  },
   "emptyState": {
-    "title": "No data yet",
-    "description": "No matching Sunner found"
+    "title": "No data yet"
+  },
+  "noSearchResult": {
+    "title": "No matching Sunner found"
   }
 }

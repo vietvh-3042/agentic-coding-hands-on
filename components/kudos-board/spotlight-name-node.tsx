@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import { formatTimeOfDay } from "./format-time-of-day";
 
 export type SpotlightNodeSize = "sm" | "md";
 
@@ -32,19 +33,6 @@ interface SpotlightNameNodeProps {
   onHoverChange: (id: string | null) => void;
 }
 /* eslint-enable no-unused-vars */
-
-/** Formats an ISO timestamp as "HH:mmAM/PM" (matches the design's ticker
- *  format, e.g. "08:30PM"). UTC extraction — see format-kudo-timestamp.ts
- *  for why (avoids a server/client hydration mismatch). */
-function formatTimeOfDay(iso: string): string {
-  const date = new Date(iso);
-  if (Number.isNaN(date.getTime())) return "";
-  const hours24 = date.getUTCHours();
-  const minutes = String(date.getUTCMinutes()).padStart(2, "0");
-  const period = hours24 >= 12 ? "PM" : "AM";
-  const hours12 = hours24 % 12 || 12;
-  return `${String(hours12).padStart(2, "0")}:${minutes}${period}`;
-}
 
 /**
  * Single recipient name inside the Spotlight word cloud. Absolute-positioned
